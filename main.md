@@ -7,8 +7,7 @@ The problem of filter identification mirrors closely that identification of came
 
 ##### Deep learning for source camera identification on mobile devices
 
-[David Freire-Obregón](https://arxiv.org/search/cs?searchtype=author&query=Freire-Obreg%C3%B3n%2C+D),  [Fabio Narducci](https://arxiv.org/search/cs?searchtype=author&query=Narducci%2C+F),  [Silvio Barra](https://arxiv.org/search/cs?searchtype=author&query=Barra%2C+S),  [Modesto Castrillón-Santana](https://arxiv.org/search/cs?searchtype=author&query=Castrill%C3%B3n-Santana%2C+M)
-
+https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
 
 
 
@@ -21,6 +20,6 @@ The problem of filter identification mirrors closely that identification of came
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2MjM4NjM4Miw4MjAyMjMxMzUsLTE5Nj
+eyJoaXN0b3J5IjpbLTU5MjUyMzM4Myw4MjAyMjMxMzUsLTE5Nj
 cyNjUxMjYsMTkwMzkwOTYwNV19
 -->
