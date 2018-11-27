@@ -15,7 +15,11 @@ https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
 https://arxiv.org/pdf/1810.02981.pdf
 
 ## Approach
-More specifically, we follow the approach stated in the first paper which suggested 
+More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. For any input image, 
+
+We implemented the neural network using Keras api
+
+
 ## Experiments/Results
 ## Qualitative Results
 ## Conclusion and Future Work
@@ -24,6 +28,6 @@ More specifically, we follow the approach stated in the first paper which sugges
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzMwNDAzMDEsODIwMjIzMTM1LC0xOT
-Y3MjY1MTI2LDE5MDM5MDk2MDVdfQ==
+eyJoaXN0b3J5IjpbMTY4Mzg3NjY5Niw4MjAyMjMxMzUsLTE5Nj
+cyNjUxMjYsMTkwMzkwOTYwNV19
 -->
