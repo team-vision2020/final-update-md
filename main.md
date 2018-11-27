@@ -14,10 +14,8 @@ https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
 ##### Camera Model Identification Using Convolutional Neural Networks
 https://arxiv.org/pdf/1810.02981.pdf
 
-
-
-
 ## Approach
+More specifically, we follow the approach stated in 
 ## Experiments/Results
 ## Qualitative Results
 ## Conclusion and Future Work
@@ -26,6 +24,6 @@ https://arxiv.org/pdf/1810.02981.pdf
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEyMTkwNTU5OSw4MjAyMjMxMzUsLTE5Nj
+eyJoaXN0b3J5IjpbLTI1Nzg4MDA1OCw4MjAyMjMxMzUsLTE5Nj
 cyNjUxMjYsMTkwMzkwOTYwNV19
 -->
