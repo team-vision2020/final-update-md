@@ -15,7 +15,7 @@ https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
 https://arxiv.org/pdf/1810.02981.pdf
 
 ## Approach
-More specifically, we follow the approach stated in 
+More specifically, we follow the approach stated in the first paper which suggested 
 ## Experiments/Results
 ## Qualitative Results
 ## Conclusion and Future Work
@@ -24,6 +24,6 @@ More specifically, we follow the approach stated in
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1Nzg4MDA1OCw4MjAyMjMxMzUsLTE5Nj
-cyNjUxMjYsMTkwMzkwOTYwNV19
+eyJoaXN0b3J5IjpbLTIxMzMwNDAzMDEsODIwMjIzMTM1LC0xOT
+Y3MjY1MTI2LDE5MDM5MDk2MDVdfQ==
 -->
