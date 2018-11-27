@@ -15,7 +15,9 @@ https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
 https://arxiv.org/pdf/1810.02981.pdf
 
 ## Approach
-More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. For any input image, 
+More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. The final output layer is a softmax layer wit
+
+ For images larger than the network input size of 32x32x3, we subdivide the source image into separate patches and perform voting based on the classification for 
 
 We implemented the neural network using Keras api
 
@@ -28,6 +30,6 @@ We implemented the neural network using Keras api
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4Mzg3NjY5Niw4MjAyMjMxMzUsLTE5Nj
-cyNjUxMjYsMTkwMzkwOTYwNV19
+eyJoaXN0b3J5IjpbNjkzODAyNzcwLDgyMDIyMzEzNSwtMTk2Nz
+I2NTEyNiwxOTAzOTA5NjA1XX0=
 -->
