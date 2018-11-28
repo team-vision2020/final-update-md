@@ -50,12 +50,6 @@ Our approach splits the end-to-end task of filter inversion into two steps:
 
 While there are infinitely many filters possible, popular social media platforms have a few pre-selected filters that are widely used. Therefore, we constrain the scope of our filter inversion by assuming input images were filtered at most once by a filter from a known set. To accurately model a real-world application, our list comprises of the following six popular Instagram filters:
 
-
-![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 23"
-
-
 \def\filterimagewidth{3cm}
 \begin{figure}[H]
     \centering
@@ -107,7 +101,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 ## References
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTUyOTIxMTY0LDE3NDE2MDkwNjIsLTY5Mj
+eyJoaXN0b3J5IjpbMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5Mj
 UyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywt
 MTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMj
 IzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVdfQ==
