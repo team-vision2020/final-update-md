@@ -45,8 +45,6 @@ Our approach splits the end-to-end task of filter inversion into two steps:
 1. Generate a probability vector for possible filters applied to a given image. (Filter classification)
 2. With the image and the probability vector as inputs, apply a learned inverse filter onto the image to recover the unfiltered image. (Filter inversion)
 
-% The first generates a probability vector for the possible filters applied to an image. The second takes the most likely filter prediction, and applies the learned inverse filter onto the image to recover the original image. 
-
 While there are infinitely many filters possible, popular social media platforms have a few pre-selected filters that are widely used. Therefore, we constrain the scope of our filter inversion by assuming input images were filtered at most once by a filter from a known set. To accurately model a real-world application, our list comprises of the following six popular Instagram filters:
 
 \def\filterimagewidth{3cm}
@@ -102,7 +100,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM2NjM1NTY3LC05NjAxNDc0MTYsNTAwNz
-k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
-Nyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYwNV19
+eyJoaXN0b3J5IjpbOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OT
+g5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3
+LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1XX0=
 -->
