@@ -14,6 +14,15 @@ Here, we follow a new approach in filter prediction using convolutional neural n
 
 ## Teaser Figure
 ## Introduction
+Filtered photos have become ubiquitous on social media platforms such as Snapchat, Instagram, Flickr, and more. For the casual eye, the subtlety of these filters can make it hard to distinguish between filtered and unfiltered images on social media, leading to a false perceptual model of how natural images look, skewing our expectations about reality. We hope this project will help bring more transparency into how images are often edited by identifying whether a common image filter have been applied to an image, and expose users to the natural state of these images. We believe that transparency in the image editing process is important in raising awareness about deliberate modifications to perceptions of reality, allowing content consumers to enjoy the edited content while being aware of their true nature.
+
+Not to be confused with filters in the computer vision setting, which are often used to better extract information from an image, filters in the social media setting describe a predefined set of modifications to an image that attempts enhance its human visual appeal. Most commonly, these filters come in the form of color balance adjustments and can be represented as tweaks to the color curves of an RGB image. A color curve $f: [0, 255] \to [0, 255]$ is a continuous function that remaps the intensities in each color channel. Modification to the color curve allows the user to non-uniformly boost or decrease color intensities at varying ranges to create various effects such as increasing contrast or creating color shifts (e.g. \cref{fig:color_curve} demonstrates a boost of blues in shadows while decreasing blues in highlights). Some filters also include additional effects such as blurring/sharpening using convolution kernels, the addition of borders, and the application of vignette darkening at the edges.
+
+image!!!!
+
+
+
+
 The problem of filter identification mirrors closely that identification of camera source based on camera noise and there are several piece of literature regarding this topic. While there have been several paper on this topic previously using traditional expert feature based techniques [need references], we particularly follow convolutional neural network based approaches that have shown good results in the past two years, specifically
 
 ##### Deep learning for source camera identification on mobile devices
@@ -40,7 +49,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAyNjMxMjQwLDQ5Mzk3NzgyOCwtMTg2Mj
-g2NzUzNyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYw
-NV19
+eyJoaXN0b3J5IjpbLTU4NjY2ODg0Myw0OTM5Nzc4MjgsLTE4Nj
+I4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2
+MDVdfQ==
 -->
