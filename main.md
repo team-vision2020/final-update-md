@@ -111,8 +111,9 @@ We also compared this approach to the results of our previous approach, where we
 
 Baseline accuracy with random decision: $0.143$
 Average accuracy from color histogram features feeding into a neural network model:  $0.783$
-Average accuracy from feeding additional context information to our based neural network model:  $0.783$
-Average accuracy of our convolutional neural network model: $0.955$
+Average accuracy from feeding additional context information to neural network model:  $0.783$
+
+**Average accuracy of our convolutional neural network model: $0.955$**
 
 
 <!--
@@ -171,11 +172,11 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc1MzEwMjk0LC00MzA2NDUyNTIsLTIwNT
-I2MDg0MiwtMjU5MDA3NTczLDE3OTIyODExNSwxMTQzNTc0NTks
-LTMzMjI5OTIwNiw3ODU2NzUyODIsMTY5NDYyNzA1NywtMTk2MD
-Y3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcs
-MjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNz
-c0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTBd
-fQ==
+eyJoaXN0b3J5IjpbLTIwMTcxMDI5NjksLTQzMDY0NTI1MiwtMj
+A1MjYwODQyLC0yNTkwMDc1NzMsMTc5MjI4MTE1LDExNDM1NzQ1
+OSwtMzMyMjk5MjA2LDc4NTY3NTI4MiwxNjk0NjI3MDU3LC0xOT
+YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
+NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
+E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
+MF19
 -->
