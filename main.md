@@ -40,6 +40,55 @@ The problem of filter identification mirrors closely that of identification of t
 [^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
 ## Approach
+
+Our approach splits the end-to-end task of filter inversion into two steps:
+\begin{itemize}
+    \item Generate a probability vector for possible filters applied to a given image. (Filter classification)
+    \item With the image and the probability vector as inputs, apply a learned inverse filter onto the image to recover the unfiltered image. (Filter inversion)
+\end{itemize}
+% The first generates a probability vector for the possible filters applied to an image. The second takes the most likely filter prediction, and applies the learned inverse filter onto the image to recover the original image. 
+
+While there are infinitely many filters possible, popular social media platforms have a few pre-selected filters that are widely used. Therefore, we constrain the scope of our filter inversion by assuming input images were filtered at most once by a filter from a known set. To accurately model a real-world application, our list comprises of the following six popular Instagram filters:
+
+\def\filterimagewidth{3cm}
+\begin{figure}[H]
+    \centering
+    \subfloat[Original image]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/original.jpg}}
+    \subfloat[Clarendon]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/clarendon.jpg}}
+    \subfloat[Gingham]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/gingham.jpg}}
+    \subfloat[Juno]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/juno.jpg}}\\
+    \subfloat[Lark]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/lark.jpg}}
+    \subfloat[Gotham]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/gotham.jpg}}
+    \subfloat[Reyes]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/reyes.jpg}}
+    \caption{Selected filters}
+    \label{fig:filters}
+\end{figure}
+
+Given the scant amount of existing literature on the problem of filter identification aside from \cite{IEEE_Inversion}, there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
+
+\subsection*{Filter classification}
+Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
+
+For feature extraction, because color curves are a major component of many of the popular image filters, we decided to use color histograms to extract global color information from the image. Furthermore, because these color curve modifications are often applied independently in each RGB channel, we create separate color intensity histograms for each color channel and concatenate them together to generate the features for a given image.
+
+Note that this low level data can be augmented with scene and object information, premised on the idea that color distributions are correlated to the subjects and the environment of the image. This augmentation has not yet been incorporated into the pipeline.
+
+Due to the lack of neural network based approaches in the previous work done in this area, we had no intuition on the appropriate complexity required for our models. Therefore, we first experimented with the simplest models with one layer and few neurons, found it performed poorly, and gradually increased complexity until diminishing return on performance occurred.
+
+We utilize Keras \cite{Keras} to create a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU activation function because it has been consistently shown to provide good performance and training speed for neural networks \cite{ReLU}. We use a cross-entropy loss function and the Adam optimizer \cite{Adam} to train our neural network model.
+
+% TODO(chunlok): Add this back if needed.
+One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training and testing set.
+
+\begin{figure}[H]
+    \centering
+    \input{detection_nn.tex}
+    \caption{Detection NN Architecture}
+    \label{fig:detection_nn}
+\end{figure}
+
+
+
 More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. The final output layer is a softmax layer and outputs a probability vector of filter applied to the image. Our current network's input size is only 32x32x3 and are trained using images of these size. For images larger than the network input size of 32x32x3, we subdivide the source image into separate patches and perform voting based on the classification for each subpatch.
 
 We implemented the neural network using Keras api.
@@ -54,8 +103,8 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4NDY5MDk2NiwtOTYwMTQ3NDE2LDUwMD
-c5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1
-MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVdfQ
-==
+eyJoaXN0b3J5IjpbLTE5MzYxOTc1MjYsLTk2MDE0NzQxNiw1MD
+A3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3
+NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1XX
+0=
 -->
