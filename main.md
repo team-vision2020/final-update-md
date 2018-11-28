@@ -100,9 +100,7 @@ $$ \text{63000 images} \times 0.1 = 6300$$
 
 For filter identification, because each image in the dataset is $128 \times 128 \times 3$, we further subdivide each image into 16 disjoint $32 \times 32 \times 3$ image for training, leading to a total of 902720 training images and 4480 validation images. Each image also have an associated 7-dimensional one-hot output vector that indicates the ground truth for which filter has been applied to the image.
 
-We adopted the approach in [^obregon] and found that slight tweaks in its hyperparameters was sufficient to provide strong results. We test greater modifications to the architecture such as adding additional convolution layers and tweaking number of neurons in the fully connected layers but found decreasing model complexity generally decrease accuracy and increasing complexity did not lead to meaningful 
-
-Specifically, we tuned the negative slope coefficient on the leaky ReLU and found a sweet spot of 0.3 to both allow fast convergence and robustness to the variation of 
+We adopted the approach in [^obregon] and found that slight tweaks in its hyperparameters was sufficient to provide strong results. We test greater modifications to the architecture such as adding additional convolution layers and tweaking number of neurons in the fully connected layers but found decreasing model complexity generally decrease accuracy and increasing complexity did not lead to meaningful increase in accuracy. One specific thing we did tune was  the negative slope coefficient on the leaky ReLU. We found a sweet spot of 0.3 to that lloweallow fast convergence and robustness to the variation of hyperparameters
 
 
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
@@ -160,11 +158,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk3NjkyMjc0LDE2OTQ2MjcwNTcsLTE5Nj
-A2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3
-LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMT
-c3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkw
-LDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMT
-Q3NDE2LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4Mjhd
-fQ==
+eyJoaXN0b3J5IjpbLTE5NzA1MjAyMjgsMTY5NDYyNzA1NywtMT
+k2MDY3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5
+MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMj
+ExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5
+OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05Nj
+AxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3Nzgy
+OF19
 -->
