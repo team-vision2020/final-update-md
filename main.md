@@ -106,7 +106,9 @@ We trained in rounds of 5 epochs with various batch sizes until validation accur
 
 We evaluated our model during training using overall accuracy on the validation set for each individual $32 \times 32 \times 3$  image. 
 
-For final model evaluation, we evaluated the overall accuracy, precision, recall, and F1-score for each filter category. We also evaluated our model based on both individual $32 \times 32 \times 3$ image labeling and prediction using a majority vote voting scheme
+For final model evaluation, we evaluated the overall accuracy, precision, recall, and F1-score for each filter category. We also evaluated our model based on both individual $32 \times 32 \times 3$ image labeling and prediction using a majority vote voting scheme.
+
+We also compared this approach to our previous approach of extracting RGB color histograms 
 
 <!--
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
@@ -123,10 +125,10 @@ One improvement to note is that we did not utilize validation set (which we shou
     \includegraphics[width=0.6\textwidth]{images/confusionMatrix.jpg}
     \caption{Confusion matrix for detection NN}
     \label{fig:confusion_matrix}
-\end{figure} -->
+\end{figure} 
 
 
-Our initial approach evaluated our model based on the overall accuracy in the prediction (filter with maximum probability from our probability vector). However, we noticed visually subtler filters naturally had lower identification rates, so we refined our statistics to distinguish success for different filters. We thus also looked at the precision, recall, F1 score, and the confusion matrix to evaluate model performance on individual filters. For comparison, the baseline accuracy of a random classifier is 0.143.
+Our initial approach evaluated our model based on the overall accuracy in the prediction (filter with maximum probability from our probability vector). However, we noticed visually subtler filters naturally had lower identification rates, so we refined our statistics to distinguish success for different filters. We thus also looked at the precision, recall, F1 score, and the confusion matrix to evaluate model performance on individual filters. For comparison, the baseline accuracy of a random classifier is 0.143. -->
 
 ## Qualitative Results
 
@@ -164,11 +166,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MTg0MzkxMywxNjk0NjI3MDU3LC0xOT
-YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
-NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
-E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
-MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MD
-E0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4
-XX0=
+eyJoaXN0b3J5IjpbMTY5NjgyNTUwLDE2OTQ2MjcwNTcsLTE5Nj
+A2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3
+LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMT
+c3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkw
+LDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMT
+Q3NDE2LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4Mjhd
+fQ==
 -->
