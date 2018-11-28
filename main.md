@@ -119,9 +119,9 @@ Result from Individual Image classification:
 
 
 | Metric \ Filter| Identity | na| no | | Lark| Gotham|Reyes------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
-| Precision  |0.967 | 0.992| 0.972|  |00 |0.844 |0.948| 0.979| 0.993|
-| Recall    	| c    |   $12 |
-| F1-Score		| are neat      |    $1 |
+| Precision  |0.967 | 0.992| 0.97 |00 |4| 0.844 |0.948| 0.979| 0.993|
+| Recall  | 0.977 |0.966 | 1.00| 0.952 | 0.813 | 0.997 | 0.980
+| F1-Score		|      |    $1 |
 
 
 
@@ -181,7 +181,7 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MDA5NTc0MywtMTI4NzExMTcyMCwtMT
+eyJoaXN0b3J5IjpbLTE3MDY4Njc1MTAsMTg5MDA5NTc0MywtMT
 g2NDU1MDY1OCwyMDU4NzYxNjk2LC00MzA2NDUyNTIsLTIwNTI2
 MDg0MiwtMjU5MDA3NTczLDE3OTIyODExNSwxMTQzNTc0NTksLT
 MzMjI5OTIwNiw3ODU2NzUyODIsMTY5NDYyNzA1NywtMTk2MDY3
