@@ -101,7 +101,7 @@ For filter identification, because each image in the dataset is $128 \times 128 
 
 We adopted the approach in [^obregon] and found that slight tweaks in its hyperparameters was sufficient to provide strong results. We test greater modifications to the architecture such as adding additional convolution layers and tweaking number of neurons in the fully connected layers but found decreasing model complexity generally decrease accuracy and increasing complexity did not lead to meaningful increase in accuracy. One specific thing we did tune was  the negative slope coefficient on the leaky ReLU. We found a sweet spot of 0.3 to that allowed both fast convergence and robustness to the variation of hyperparameters.
 
-We trained in rounds of 5 epochs with various batch sizes until validation accuracy started to decrease due to overfitting. Our model is trained with a total of 3 rounds of 5 epochs with batch sizes of 256, 1024, and 4096 on a Nvidia GTx 
+We trained in rounds of 5 epochs with various batch sizes until validation accuracy started to decrease due to overfitting. Our model is trained with a total of 3 rounds of 5 epochs with batch sizes of 256, 1024, and 4096 on a Nvidia GTX970m GPU using Keras.
 
 We evaluated our model during training using overall accuracy on the validation set for each individual $32 \times 32 \times 3$  image. 
 
@@ -170,11 +170,11 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYzNTg5NDE0LC00MzA2NDUyNTIsLTIwNT
-I2MDg0MiwtMjU5MDA3NTczLDE3OTIyODExNSwxMTQzNTc0NTks
-LTMzMjI5OTIwNiw3ODU2NzUyODIsMTY5NDYyNzA1NywtMTk2MD
-Y3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcs
-MjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNz
-c0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTBd
-fQ==
+eyJoaXN0b3J5IjpbLTE2ODA1MzA0MzMsLTQzMDY0NTI1MiwtMj
+A1MjYwODQyLC0yNTkwMDc1NzMsMTc5MjI4MTE1LDExNDM1NzQ1
+OSwtMzMyMjk5MjA2LDc4NTY3NTI4MiwxNjk0NjI3MDU3LC0xOT
+YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
+NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
+E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
+MF19
 -->
