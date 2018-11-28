@@ -1,4 +1,7 @@
-# Hi Team
+# Automatic Image Filter Identification
+**Mert Dumenci, Cem Gokmen, Chunlok Lo, Joel Ye**
+CS4476 Term Project, Fall 2018
+Georgia Teech
 
 ## Abstract
 
@@ -106,8 +109,8 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMT
-Q3NDE2LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4Mjgs
-LTE4NjI4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MD
-M5MDk2MDVdfQ==
+eyJoaXN0b3J5IjpbMTU1ODkzMzg2NiwtNjkyNTIyMDMxLDkyMj
+k2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2
+LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMxMzUsLTE5Nj
+cyNjUxMjYsMTkwMzkwOTYwNV19
 -->
