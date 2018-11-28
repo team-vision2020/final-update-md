@@ -70,13 +70,15 @@ As convolutional neural network architecture was able to obtain good results in 
 
 We utilize Keras[^Keras] to create a convolutional neural network that takes in $32 \times 32 \times 3$ images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through. We use categorical cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
 
-We compared the use of ReLU and leaky ReLU activation function in our network. We found that the use of ReLU often caused our network to not train at all and found that leaky ReLU  provides vastly superior results in our use case. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
+We compared the use of ReLU and leaky ReLU activation function in our network. We found that the use of ReLU often caused our network to not train at all and found that leaky ReLU  provides vastly superior results in our use case. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3.
+
+While many papers utilizes drop out layers to reduce overfitting in the training process, b
 
 #### Network Architecture
 [TODO Probably rip image from paper? No clue how they make CNN diagrams]
 
 
-One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training and testing set.
+One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training, testing, and validation set.
 
 <!---
 TODO: Add missing image
@@ -127,11 +129,11 @@ Because the architecture presented in the paper treats only 32x32x3 images while
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1NTE1MDYyMSwtMTc5OTExNzY4NSwtOT
-Y4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgx
-MTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNj
-c4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIw
-MzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2Nj
-E1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEz
-NV19
+eyJoaXN0b3J5IjpbOTM4ODUwNjU0LC0xNzk5MTE3Njg1LC05Nj
+gyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODEx
+MCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nz
+g0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAz
+MSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MT
+U2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1
+XX0=
 -->
