@@ -68,7 +68,7 @@ Our approach to filter classification takes in an input image and outputs a prob
 
 As convolutional neural network architecture was able to obtain good results in the problem of source camera identification, we follow the architecture detailed in the paper by D. Freire-Obregon[^obregon] and apply their technique to this problem space. 
 
-We utilize Keras[^Keras] toWe create a convolutional neural network that takes in $32 \times 32 \times 3$ images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through.
+We utilize Keras[^Keras] to create a convolutional neural network that takes in $32 \times 32 \times 3$ images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through.
 
 
 
@@ -130,7 +130,7 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg3Nzg1ODg1NiwtMTc5OTExNzY4NSwtOT
+eyJoaXN0b3J5IjpbMTgzMjkyMzk5MCwtMTc5OTExNzY4NSwtOT
 Y4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgx
 MTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNj
 c4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIw
