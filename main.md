@@ -8,7 +8,7 @@ We propose an end-to-end system that will take an image from the user, identify 
 
 From our previous experiments, we were able to improve our results on classify images by the filter applied to it (from our predefined set of six Instagram filters) while distinguishing it from natural (unfiltered) images with an accuracy of 60% to 98% depending on the characteristics of the filter such as the amount of deviation from the original image.
 
-We have improved our results in filter prediction using a convolutional neural network from an average of 78% previousto 95% accuracy.  a low of 79% and an ave
+We have improved our results in filter prediction using a convolutional neural network from an average of 78% previously to an average of 95% accuracy. Our lowest F1 score across all categories improved from 60% to 79% 
 
 Let $E(I, I')$ be the average per-pixel mean of the sum absolute differences in intensity across all color channels of images $I$ and $I'$ (\textit{Equation 1}). For inverting images given a known filter, we are able to obtain a pseudo-inverse of the image with an average error $E$ of 1\%. End-to-end, our system detects and inverts filters with an average error $E$ of 5.5\% between our output image and the original unfiltered version. In comparison, the baseline error $E$ between filtered and unfiltered images was found to be 8.4\%.
 ## Teaser Figure
@@ -39,7 +39,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxODE1OTQ2Niw0OTM5Nzc4MjgsLTE4Nj
+eyJoaXN0b3J5IjpbMjEzNzY0MDYxNSw0OTM5Nzc4MjgsLTE4Nj
 I4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2
 MDVdfQ==
 -->
