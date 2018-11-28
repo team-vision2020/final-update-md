@@ -27,7 +27,7 @@ For the purposes of this project, we limit our scope and define a filter as a pa
 
 While many commercial filters may also contain additional effects such as borders and vignettes, filters are mostly characterized by how they shift the color curves globally and their blur/sharpen/emboss effects. Therefore, for the scope of this project, we choose filters which does not have these additional effect.
 
-Though our work relates to many other fields of computer vision, such as image denoising and brightening images[^Dark], not much work directly focuses on end to end filter identification and inversion. One publication that we found \cite{IEEE_Inversion} for identification depends heavily on prior knowledge of the camera demosaicing algorithm which is not always readily available. We thus chose to develop our own identification system.
+Though our work relates to many other fields of computer vision, such as image denoising and brightening images[^Dark], not much work directly focuses on end to end filter identification and inversion. One publication that we found [^1] for identification depends heavily on prior knowledge of the camera demosaicing algorithm which is not always readily available. We thus chose to develop our own identification system.
 
 In many of these settings such as image denoising or brightening, the modifications applied to the image (noise, etc.) are either consistent across the dataset or is known a priori. Our task is different from these previous work as our filter functions are unknown, but we have examples of unfiltered \& filtered images. Therefore, we decompose this task of filter inversion into two separate tasks, one is filter identification given an input image and the other is filter inversion given a known filter. Filter identification for an image is a classification task while filter inversion is a regression task estimating the filter inverses.
 
@@ -64,7 +64,7 @@ While there are infinitely many filters possible, popular social media platforms
     \label{fig:filters}
 \end{figure}
 
-Given the scant amount of existing literature on the problem of filter identification aside from \cite{IEEE_Inversion}, there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
+Given the scant amount of existing literature on the problem of filter identification aside from [^1], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
 \subsection*{Filter classification}
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
@@ -100,9 +100,11 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 ## Conclusion and Future Work
 ## References
 
+[^] C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5Mj
-UyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywt
-MTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMj
-IzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVdfQ==
+eyJoaXN0b3J5IjpbMTgwMjQ0NTksMTUzMjgxOTkwLDE3NDE2MD
+kwNjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUw
+MDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Nj
+c1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVd
+fQ==
 -->
