@@ -27,20 +27,11 @@ For the purposes of this project, we limit our scope and define a filter as a pa
 
 While many commercial filters may also contain additional effects such as borders and vignettes, filters are mostly characterized by how they shift the color curves globally and their blur/sharpen/emboss effects. Therefore, for the scope of this project, we choose filters which does not have these additional effect.
 
-Though our work relates to many other fields of computer vision, such as image denoising and brightening images[^Dark], not much work directly focuses on end to end filter identification and inversion. One publication that we found [^1] for identification depends heavily on prior knowledge of the camera demosaicing algorithm which is not always readily available. We thus chose to develop our own identification system.
+Though our work relates to many other fields of computer vision, such as image denoising and brightening images[^Dark], not much work directly focuses on end to end filter identification and inversion. One publication that we found [^ieee_inversion] for identification depends heavily on prior knowledge of the camera demosaicing algorithm which is not always readily available. We thus chose to develop our own identification system.
 
 In many of these settings such as image denoising or brightening, the modifications applied to the image (noise, etc.) are either consistent across the dataset or is known a priori. Our task is different from these previous work as our filter functions are unknown, but we have examples of unfiltered \& filtered images. Therefore, we decompose this task of filter inversion into two separate tasks, one is filter identification given an input image and the other is filter inversion given a known filter. Filter identification for an image is a classification task while filter inversion is a regression task estimating the filter inverses.
 
 The problem of filter identification mirrors closely that of identification of the source camera of a given image. To identify the source camera, one needs to exploit the noise profiles inherent to a camera and identify that noise profile in the given image. There have been several pieces of literature, especially in the field of digital forensics, that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source[^lucas] but have failed to achieve high accuracy. However, several several recent works have applied convolutional neural networks to the problem and achieved notable results[^obregon] [^huang] [^kuzin]. Because the problem space between source camera identification and filter identification is similar, we take the approach of these recent papers and apply it to the context of filter inversion.
-
-
-[^lucas]:([Lukas et al., 2006] Lukas, J., Fridrich, J., and Goljan, M. (2006). Digital camera identification from sensor pattern noise. IEEE Transactions on Information Forensics and Security, 1(2):205–214) 
-
-[^obregon]:Deep learning for source camera identification on mobile devices https://arxiv.org/abs/1710.01257
-
-[^huang]:  Identification of the source camera of images based on convolutional neural network https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
-
-[^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
 ## Approach
 
@@ -64,7 +55,7 @@ While there are infinitely many filters possible, popular social media platforms
     \label{fig:filters}
 \end{figure}
 
-Given the scant amount of existing literature on the problem of filter identification aside from [^1], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
+Given the scant amount of existing literature on the problem of filter identification aside from [^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
 \subsection*{Filter classification}
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
@@ -75,7 +66,7 @@ Note that this low level data can be augmented with scene and object information
 
 Due to the lack of neural network based approaches in the previous work done in this area, we had no intuition on the appropriate complexity required for our models. Therefore, we first experimented with the simplest models with one layer and few neurons, found it performed poorly, and gradually increased complexity until diminishing return on performance occurred.
 
-We utilize Keras \cite{Keras} to create a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU activation function because it has been consistently shown to provide good performance and training speed for neural networks \cite{ReLU}. We use a cross-entropy loss function and the Adam optimizer \cite{Adam} to train our neural network model.
+We utilize Keras[^keras] to create a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU activation function because it has been consistently shown to provide good performance and training speed for neural networks[^ReLU]. We use a cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
 
 % TODO(chunlok): Add this back if needed.
 One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training and testing set.
@@ -100,11 +91,20 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 ## Conclusion and Future Work
 ## References
 
-[^1]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
+[^ieee_inversion]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
+
+[^lucas]:([Lukas et al., 2006] Lukas, J., Fridrich, J., and Goljan, M. (2006). Digital camera identification from sensor pattern noise. IEEE Transactions on Information Forensics and Security, 1(2):205–214) 
+
+[^obregon]:Deep learning for source camera identification on mobile devices https://arxiv.org/abs/1710.01257
+
+[^huang]:  Identification of the source camera of images based on convolutional neural network https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
+
+[^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY4MjU5OTk2LDE1MzI4MTk5MCwxNzQxNj
-A5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1
-MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyOD
-Y3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1
-XX0=
+eyJoaXN0b3J5IjpbMTAxMzQ2MDgxMiwxNTMyODE5OTAsMTc0MT
+YwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYs
+NTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mj
+g2NzUzNyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYw
+NV19
 -->
