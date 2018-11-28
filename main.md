@@ -70,7 +70,7 @@ As convolutional neural network architecture was able to obtain good results in 
 
 We utilize Keras[^Keras] to create a convolutional neural network that takes in $32 \times 32 \times 3$ images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through. We use categorical cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
 
-We compared the use of ReLU and leaky ReLU activation function in our network. We found that the use of ReLU often caused our network to not train at all and found that leaky ReLU  provides vastly superior results as it provides a solution to the vanishing gradient problem We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
+We compared the use of ReLU and leaky ReLU activation function in our network. We found that the use of ReLU often caused our network to not train at all and found that leaky ReLU  provides vastly superior results in our use case. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
 
 #### Network Architecture
 [TODO Probably rip image from paper? No clue how they make CNN diagrams]
@@ -124,14 +124,14 @@ Because the architecture presented in the paper treats only 32x32x3 images while
 [^Dark]: C. Chen, C. Chen, J. Xu, and V. Koltun, "Learning to See in the Dark", CVPR, 2018.
 
 [^LeakyReLU]:Bing Xu and Naiyan Wang and Tianqi Chen and Mu Li, "  
-Empirical Evaluation of Rectified Activations in Convolutional Network", ICLR, 2015.
+Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjk3NTc3ODksLTE3OTkxMTc2ODUsLT
-k2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4
-MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLD
-Y3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIy
-MDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNj
-YxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMx
-MzVdfQ==
+eyJoaXN0b3J5IjpbLTk1NTE1MDYyMSwtMTc5OTExNzY4NSwtOT
+Y4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgx
+MTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNj
+c4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIw
+MzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2Nj
+E1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEz
+NV19
 -->
