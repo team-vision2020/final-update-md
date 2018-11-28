@@ -139,7 +139,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 
 ## Conclusion and Future Work
 
-We initially considered using a structured approach that used nearest neighbors in a large corpus of knowledge about color distributions of 
+We initially considered using a structured approach that used nearest neighbors in a large corpus of knowledge about color distributions of scenes and detected objects, but decided to drop this path as 
 
 ## References
 
@@ -171,11 +171,11 @@ We initially considered using a structured approach that used nearest neighbors 
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE0MzU3NDU5LC0zMzIyOTkyMDYsNzg1Nj
-c1MjgyLDE2OTQ2MjcwNTcsLTE5NjA2NzQ1LC0xNzk5MTE3Njg1
-LC05NjgyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMj
-YwODExMCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4
-MSw2Nzg0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5Mj
-UyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxM119
+eyJoaXN0b3J5IjpbNzE3NjgxODM3LDExNDM1NzQ1OSwtMzMyMj
+k5MjA2LDc4NTY3NTI4MiwxNjk0NjI3MDU3LC0xOTYwNjc0NSwt
+MTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMj
+QxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1
+LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNj
+A5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNl19
 
 -->
