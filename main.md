@@ -68,7 +68,6 @@ Due to the lack of neural network based approaches in the previous work done in 
 
 We utilize Keras[^keras] to create a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU activation function because it has been consistently shown to provide good performance and training speed for neural networks[^ReLU]. We use a cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
 
-% TODO(chunlok): Add this back if needed.
 One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training and testing set.
 
 \begin{figure}[H]
@@ -102,9 +101,9 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 [^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMzQ2MDgxMiwxNTMyODE5OTAsMTc0MT
-YwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYs
-NTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mj
-g2NzUzNyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYw
-NV19
+eyJoaXN0b3J5IjpbLTE2NjMwOTk5NTgsMTUzMjgxOTkwLDE3ND
+E2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2
+LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4Nj
+I4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2
+MDVdfQ==
 -->
