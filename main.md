@@ -97,13 +97,9 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 [^obregon]: D. Freire-Obregon, F. Narducci, S. Barra, and M. Castrillon-Santana. "Deep learning for source camera identification on mobile devices", [arXiv](https://arxiv.org/abs/1710.01257), 2017.
 
-<!-- [NaHuanga](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[JingshaHea](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[NafeiZhua](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[XinggangXuana](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[GongzhengLiua](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[ChengyueChangb](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!) -->
-
 [^huang]: N. Huang, J. He, X. Xuan, G. Liu, and C. Chang. "Identification of the source camera of images based on convolutional neural network", Digital Investigation, 2018.
 
-<!-- [Artur Kuzin](https://arxiv.org/search/cs?searchtype=author&query=Kuzin%2C+A), [Artur Fattakhov](https://arxiv.org/search/cs?searchtype=author&query=Fattakhov%2C+A), [Ilya Kibardin](https://arxiv.org/search/cs?searchtype=author&query=Kibardin%2C+I), [Vladimir Iglovikov](https://arxiv.org/search/cs?searchtype=author&query=Iglovikov%2C+V), [Ruslan Dautov](https://arxiv.org/search/cs?searchtype=author&query=Dautov%2C+R) -->
-
-[^kuzin]: A. Kuzin, A. Fattakhov, I. Kibardin, V. Iglovikov, and "Camera Model Identification Using Convolutional Neural Networks"
+[^kuzin]: A. Kuzin, A. Fattakhov, I. Kibardin, V. Iglovikov, and R. Dautov. "Camera Model Identification Using Convolutional Neural Networks", [arXiv](https://arxiv.org/abs/1810.02981), 2018.
 
 [^Instafilters]: M. Pratusevich, "Instagram Filters in 15 Lines of Python", Practice Python, 2016. _Retrieved from [URL](https://www.practicepython.org/blog/2016/12/20/instagram-filters-python.html)_.
 
@@ -118,9 +114,9 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMzc4NzI2OCwtMjExNzc0Njk4NSwyMD
-I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
-MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNz
-k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
-Nyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYwNV19
+eyJoaXN0b3J5IjpbNjczMzI4MzAzLC0yMTE3NzQ2OTg1LDIwMj
+k3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYy
+LC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OT
+g5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3
+LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1XX0=
 -->
