@@ -98,7 +98,11 @@ $$ \text{63000 images} \times 0.45\approx 280$$
 
 $$ \text{63000 images} \times 0.1 = 6300$$
 
-Each image have an associated 7-dimensional one-hot vector that serves as its label depending on which filter has been applied to it.
+For filter identification, we further subdivide each image in the testing and validation set to 
+
+ have an associated 7-dimensional one-hot vector that serves as its label depending on which filter has been applied to it.
+
+
 
 For filter identification, these images are further 
 
@@ -157,11 +161,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3MzI5Njc2LDE2OTQ2MjcwNTcsLTE5Nj
-A2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3
-LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMT
-c3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkw
-LDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMT
-Q3NDE2LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4Mjhd
-fQ==
+eyJoaXN0b3J5IjpbLTE4OTUwMTE1MTMsMTY5NDYyNzA1NywtMT
+k2MDY3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5
+MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMj
+ExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5
+OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05Nj
+AxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3Nzgy
+OF19
 -->
