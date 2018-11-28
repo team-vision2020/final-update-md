@@ -10,7 +10,7 @@ From our previous experiments, we were able to improve our results on classify i
 Let $E(I, I')$ be the average per-pixel mean of the sum absolute differences in intensity across all color channels of images $I$ and $I'$ (\textit{Equation 1}). For inverting images given a known filter, we were previously able to obtain a pseudo-inverse of the image with an average error $E$ of 1\% and our end-to-end system detected and inverted filters with an average error $E$ of 5.5\% between our output image and the original unfiltered version. In comparison, the baseline error $E$ between filtered and unfiltered images was found to be 8.4\%.
 
 Previously, the low accuracies of our simple filter identification model, with an average accuracy of 78% and a lowest F1 score across all filters of 0.61, presented a bottleneck for the overall quality of our filter inverses.
-Here, we follow a new approach our results in filter prediction using a convolutional neural network an average of 95% accuracy. Our lowest F1 score across all categories improved from 0.61 to 0.88.
+Here, we follow a new approach in filter prediction using convolutional neural networks. It was able to achieve an average accuracy of 95% and a lowest F1 score across all categories improved to be 0.88.
 
 ## Teaser Figure
 ## Introduction
@@ -40,7 +40,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzEzMzkyNjIsNDkzOTc3ODI4LC0xODYyOD
-Y3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1
-XX0=
+eyJoaXN0b3J5IjpbNTAyNjMxMjQwLDQ5Mzk3NzgyOCwtMTg2Mj
+g2NzUzNyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYw
+NV19
 -->
