@@ -120,9 +120,9 @@ Result from Individual Image classification:
 
 | Metric \ Filter| Original | Clarendon | Clarendon | Clarendon | Clarendon | Clarendon |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Precision     |  right-aligned | $1600 |
+| Recall    	| centered      |   $12 |
+| F1-Score		| are neat      |    $1 |
 
 
 
@@ -182,11 +182,11 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1ODc2MTY5NiwtNDMwNjQ1MjUyLC0yMD
-UyNjA4NDIsLTI1OTAwNzU3MywxNzkyMjgxMTUsMTE0MzU3NDU5
-LC0zMzIyOTkyMDYsNzg1Njc1MjgyLDE2OTQ2MjcwNTcsLTE5Nj
-A2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3
-LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMT
-c3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkw
+eyJoaXN0b3J5IjpbODM3MDcwODQ4LDIwNTg3NjE2OTYsLTQzMD
+Y0NTI1MiwtMjA1MjYwODQyLC0yNTkwMDc1NzMsMTc5MjI4MTE1
+LDExNDM1NzQ1OSwtMzMyMjk5MjA2LDc4NTY3NTI4MiwxNjk0Nj
+I3MDU3LC0xOTYwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0
+LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwOD
+g1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDcz
 XX0=
 -->
