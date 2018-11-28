@@ -63,7 +63,7 @@ TODO: Add missing image
 
 Given the scant amount of existing literature on the problem of filter identification aside from ie_[^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article [^Instafilters], which uses `numpy` functions, specifically `linspace` and `interp`, to modify the color curves of each specific channel. We obtained curve parameters for each filter from [^Instafilters_tutorial] and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
-## Filter classification
+### Filter classification
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from the input image.
 
 As convolutional neural network architecture was able to obtain good results in the problem of source camera identification, we follow the architecture detailed in the paper by D. Freire-Obregon[^obregon] and apply their technique to this problem space. 
@@ -72,7 +72,7 @@ We utilize Keras[^Keras] to create a convolutional neural network that takes in 
 
 We compared the use of ReLU and leaky ReLU activation function in our network. We found that the use of ReLU often caused our network to not train at all and found that leaky ReLU  provides vastly superior results. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
 
-### Network Architecture
+#### Network Architecture
 [TODO Probably rip image from paper? No clue how they make CNN diagrams]
 
 
@@ -83,6 +83,11 @@ TODO: Add missing image
 -->
 
 Because the architecture presented in the paper treats only 32x32x3 images while our dataset and input consisted of larger images, we developed our own routines to divide our input image into separate 32x32x3 images. During prediction time, a voting scheme is used from the prediction output from each 32x32x3 subpatch to make the final decision. This makes our architecture adaptable to various image sizes
+
+### Filter Inversion
+
+
+### End to End Neural Network
 
 ## Experiments/Results
 
@@ -121,7 +126,7 @@ Because the architecture presented in the paper treats only 32x32x3 images while
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1ODgyNzAxMzksLTE3OTkxMTc2ODUsLT
+eyJoaXN0b3J5IjpbLTE0OTc3OTkwNTAsLTE3OTkxMTc2ODUsLT
 k2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4
 MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLD
 Y3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIy
