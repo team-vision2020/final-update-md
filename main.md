@@ -95,9 +95,11 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 [^lucas]: J. Lukas,  J. Fridrich, and M. Goljan, ''Digital camera identification from sensor pattern noise.", IEEE Transactions on Information Forensics and Security, 2006.
 
-[^obregon]: D. Freire-Obregon, F. Narducci, S. Barra, and M. Castrillon-Santana. Deep learning for source camera identification on mobile devices https://arxiv.org/abs/1710.01257
+[^obregon]: D. Freire-Obregon, F. Narducci, S. Barra, and M. Castrillon-Santana. "Deep learning for source camera identification on mobile devices", [arXiv](https://arxiv.org/abs/1710.01257), 2017.
 
-[^huang]:  Identification of the source camera of images based on convolutional neural network https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
+<!-- [NaHuanga](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[JingshaHea](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[NafeiZhua](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[XinggangXuana](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[GongzhengLiua](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[ChengyueChangb](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!) -->
+
+[^huang]: N. Huang, J. Hea, XIdentification of the source camera of images based on convolutional neural network https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
 
 [^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
@@ -114,7 +116,7 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NDI0MjAyOCwtMjExNzc0Njk4NSwyMD
+eyJoaXN0b3J5IjpbLTIxNzU5NTQxMiwtMjExNzc0Njk4NSwyMD
 I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
 MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNz
 k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
