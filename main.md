@@ -23,9 +23,9 @@ TODO: Add missing image
 
 ## Introduction
 
-Filtered photos have become ubiquitous on social media platforms such as Snapchat, Instagram, Flickr, and more. To the casual viewer, mke it hard to detect, their intentional subtletyse filters can makinge it hard to distinguish between filtered and unfiltered images on social media. This can, leading to distorted pes ofa  natural images, skewing expectations about natural appearances. We hope this project will help bring more transparency into how images are often edited by identifying whether a common image filter has been applied to an image, and expose users to the natural state of these images. We believe that transparency in the image editing process is important in raising awareness about deliberate modifications to perceptions of reality, and hope to allow viewers to consume edited content while being aware of their true nature.
+Filtered photos have become ubiquitous on social media platforms such as Snapchat, Instagram, Flickr, and more. ToFor the casual viewer, mke it hard to detect, their intentionaleye, the subtlety of these filters can makinge it hard to distinguish between filtered and unfiltered images on social media. This can, leading to distorted pes ofa a false perceptual model of how natural images look, skewing our expectations about natural appearancesreality. We hope this project will help bring more transparency into how images are often edited by identifying whether a common image filter hasve been applied to an image, and expose users to the natural state of these images. We believe that transparency in the image editing process is important in raising awareness about deliberate modifications to perceptions of reality, and hope to allow viewers to consumllowing content consumers to enjoy the edited content while being aware of their true nature.
 
-Not to be confused with filters in the computer vision setting, generally used in image preprocessing, filters in the social media setting describe a predefined set of modifications to an image that attempts enhance its human visual appeal. Most commonly, these filters come in the form of color balance adjustments and can be represented as tweaks to the color curves of an RGB image. A color curve $f: [0, 255] \to [0, 255]$ is a continuous function that remaps the intensities in each color channel. Modification to the color curve allows the user to non-uniformly boost or decrease color intensities at varying ranges to create various effects such as increasing contrast or creating color shifts (e.g. <!-- TODO: Add reference to the color curve figure. --> demonstrates a boost of blues in shadows while decreasing blues in highlights). Some filters also include additional effects such as blurring/sharpening using convolution kernels, the addition of borders, and the application of vignette darkening at the edges.
+Not to be confused with filters in the computer vision setting, generally used in image preprocessingwhich are often used to better extract information from an image, filters in the social media setting describe a predefined set of modifications to an image that attempts enhance its human visual appeal. Most commonly, these filters come in the form of color balance adjustments and can be represented as tweaks to the color curves of an RGB image. A color curve $f: [0, 255] \to [0, 255]$ is a continuous function that remaps the intensities in each color channel. Modification to the color curve allows the user to non-uniformly boost or decrease color intensities at varying ranges to create various effects such as increasing contrast or creating color shifts (e.g. <!-- TODO: Add reference to the color curve figure. --> demonstrates a boost of blues in shadows while decreasing blues in highlights). Some filters also include additional effects such as blurring/sharpening using convolution kernels, the addition of borders, and the application of vignette darkening at the edges.
 
 <!---
 TODO: Add missing image
@@ -147,7 +147,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 
 We initially considered a systematic approach using nearest neighbors in a large corpus of knowledge about color distributions of scenes and detected objects, but decided to drop this alternative as the neural nets quickly pulled ahead in performance. Adding scene information did further improve performance, however, meaning that as suspected the network did gain knowledge of color distributions for different scenes. Initial plans were to construct a voting system over detected object masks, thereby exploiting color distributions of common objects. Due to the intractability of MaskRCNN with such a large dataset given our limited resources,  we instead used voting over fixed size patches in our image. Similar to how scene information was easily incorporated into the neural network approach, future work could force attention on objects in the scene by adding variable length feature composed of detected objects. Another alternative would be to cluster detectable objects by average color distributions and then create a 'bag of objects' fixed length feature that could be added to our input. 
 
-##. There have been several pieces of literature, especially in the field of digital forensics, that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source[^lucas] but have failed to achieve high accuracy. However, several several recent works have applied convolutional neural networks to the problem and achieved notable results[^obregon] [^huang] [^kuzin]. Because the problem space between source camera identification and filter identification is similar, we take the approach of these recent papers and apply it to the context of filter inversion.
+##identification of the source camera of a given image. To identify the source camera, one needs to exploit the noise profiles inherent to a camera and identify that noise profile in the given image. There have been several pieces of literature, especially in the field of digital forensics, that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source[^lucas] but have failed to achieve high accuracy. However, several several recent works have applied convolutional neural networks to the problem and achieved notable results[^obregon] [^huang] [^kuzin]. Because the problem space between source camera identification and filter identification is similar, we take the approach of these recent papers and apply it to the context of filter inversion.
 
 ## Approach
 
@@ -161,7 +161,7 @@ While there are infinitely many filters possible, popular social media platforms
 TODO: Add missing image
 -->
 
-Given the scant amount of existing literature on the problem of filter identification aside from ie_nverion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
+Given the scant amount of existing literature on the problem of filter identification aside from ie_[^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
 ## Filter classification
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
@@ -191,7 +191,7 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 ## Conclusion and Future Work
 
- References
+## References
 
 [^ieee_inversion]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
 
@@ -223,11 +223,11 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853)ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwOTU4MzQ3NywtMjUxOTk5ODk2LC0xMD
-A0MzA4NDI3LC0yOTE2NzY3NzcsMTg5MDA5NTc0MywtMTg2NDU1
-MDY1OCwyMDU4NzYxNjk2LC00MzA2NDUyNTIsLTIwNTI2MDg0Mi
-wtMjU5MDA3NTczLDE3OTIyODExNSwxMTQzNTc0NTksLTMzMjI5
-OTIwNiw3ODU2NzUyODIsMTY5NDYyNzA1NywtMTk2MDY3NDUsLT
-E3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0
-MTY5N119
+eyJoaXN0b3J5IjpbLTc0NjY0MTI1MiwxODA5NTgzNDc3LC0yNT
+E5OTk4OTYsLTEwMDQzMDg0MjcsLTI5MTY3Njc3NywxODkwMDk1
+NzQzLC0xODY0NTUwNjU4LDIwNTg3NjE2OTYsLTQzMDY0NTI1Mi
+wtMjA1MjYwODQyLC0yNTkwMDc1NzMsMTc5MjI4MTE1LDExNDM1
+NzQ1OSwtMzMyMjk5MjA2LDc4NTY3NTI4MiwxNjk0NjI3MDU3LC
+0xOTYwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1
+MjkwN119
 -->
