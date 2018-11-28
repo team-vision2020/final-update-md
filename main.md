@@ -100,7 +100,7 @@ $$ \text{63000 images} \times 0.1 = 6300$$
 
 For filter identification, because each image in the dataset is $128 \times 128 \times 3$, we further subdivide each image into 16 disjoint $32 \times 32 \times 3$ image for training, leading to a total of 902720 training images and 4480 validation images. Each image also have an associated 7-dimensional one-hot output vector that indicates the ground truth for which filter has been applied to the image.
 
-We adopted the approach in [^obregon] and used slight tweaks in the approach to 
+We adopted the approach in [^obregon] and found slight tweaks in its hyperparameters was sufficient to provide strong results. Specifically, we tuned 
 
 
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
@@ -158,7 +158,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzMDA5MzQyNiwxNjk0NjI3MDU3LC0xOT
+eyJoaXN0b3J5IjpbLTQwMjgwMzE5NywxNjk0NjI3MDU3LC0xOT
 YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
 NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
 E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
