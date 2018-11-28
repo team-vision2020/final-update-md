@@ -118,9 +118,9 @@ Average accuracy from feeding additional context information to neural network m
 Result from Individual Image classification:
 
 
-| Metric \ Filter| Ident | Clarendon | Clarendon | Clarendon | Clarendon | Clarendon |
+| Metric \ Filter| Ident | Clarendon | nGingham| Juno | Clarendo | Clarendon |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
-| Precision     ht-ali | $1600 |
+| Precision     ht-ali | $1600 |0.844 |0.948| 0.979| 0.993|
 | Recall    	| c    |   $12 |
 | F1-Score		| are neat      |    $1 |
 
@@ -182,11 +182,11 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjQ1NTA2NTgsNTc1OTc4MTEwLDIwNT
-g3NjE2OTYsLTQzMDY0NTI1MiwtMjA1MjYwODQyLC0yNTkwMDc1
-NzMsMTc5MjI4MTE1LDExNDM1NzQ1OSwtMzMyMjk5MjA2LDc4NT
-Y3NTI4MiwxNjk0NjI3MDU3LC0xOTYwNjc0NSwtMTc5OTExNzY4
-NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMD
-I2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1
-ODFdfQ==
+eyJoaXN0b3J5IjpbMTYzODU2NTExNCwtMTg2NDU1MDY1OCwyMD
+U4NzYxNjk2LC00MzA2NDUyNTIsLTIwNTI2MDg0MiwtMjU5MDA3
+NTczLDE3OTIyODExNSwxMTQzNTc0NTksLTMzMjI5OTIwNiw3OD
+U2NzUyODIsMTY5NDYyNzA1NywtMTk2MDY3NDUsLTE3OTkxMTc2
+ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMz
+AyNjA4MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQx
+NTgxXX0=
 -->
