@@ -61,16 +61,20 @@ While there are infinitely many filters possible, popular social media platforms
 TODO: Add missing image
 -->
 
-Given the scant amount of existing literature on the problem of filter identification aside from ie_[^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article Instafilters, which uses `numpy` functions, specifically `linspace` and `interp`, to modify the color curves of each specific channel. We obtained curve parameters for each filter from Instafilters_tutorial and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
+Given the scant amount of existing literature on the problem of filter identification aside from ie_[^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article Instafilters, which uses `numpy` functions, specifically `linspace and `interp`, to modify the color curves of each specific channel. We obtained curve parameters for each filter from Instafilters_tutorial and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
 ## Filter classification
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
 
 As convolutional neural network architecture was able to obtain good results in the problem of source camera identification, we follow the architecture detailed in the paper by D. Freire-Obregon[^obregon] and apply their technique to this problem space. 
 
-We utilize Keras[^keras] to create a convolutional neural network that takes in $32 \times 32 \times 3$ RGB images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through.
+We utilize Keras[^keras] toWe create a convolutional neural network that takes in $32 \times 32 \times 3$x32x3 RGB images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through.
 
 
+
+Similar to in the paper, we compared the use of ReLU and leaky ReLU activation function in our network and found that leaky ReLU provided vastly superior results. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
+
+o eur etraciecures ae o otan o eults i te olo soramera infation fo the artere eae thee  reionreon ad ply i echne  t prole sae crae a conotona eura net that tae in   ima, ps the tht cooutiona lae oe a oo ae an o y connete laer eore pas i throu  ot ae  otut  proility eor of w fiter the models the ae ae ee pased throu.
 
 a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU[^ReLU] activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU[^ReLU] activation function because it has been consistently shown to provide good performance and training speed for neural networks[^ReLU]. We use a cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
 
@@ -126,11 +130,11 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNjQyNzMwOSw1MDI0NTI5MDcsMjAwMz
-I0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4
-NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MT
-YwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYs
-NTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mj
-g2NzUzNyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYw
-NV19
+eyJoaXN0b3J5IjpbLTk2ODIyOTA2NCwtNzM2NDI3MzA5LDUwMj
+Q1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAz
+LC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1Mz
+I4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcs
+LTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOT
+c3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEy
+Nl19
 -->
