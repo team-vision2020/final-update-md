@@ -103,9 +103,9 @@ We adopted the approach in [^obregon] and found that slight tweaks in its hyperp
 
 We trained in rounds of 5 epochs with various batch sizes until validation accuracy started to decrease due to overfitting. Our model is trained with a total of 3 rounds of 5 epochs with batch sizes of 256, 1024, and 4096 on a Nvidia GTX970m GPU using Keras.
 
-We evaluated our model during training using overall accuracy on the validation set for each individual $32 \times 32 \times 3$  image. 
+We evaluated how many epochs to train using overall accuracy on the validation set for each individual $32 \times 32 \times 3$  image to prevent overfitting. 
 
-For final model evaluation, we evaluated the overall accuracy, precision, recall, and F1-score for each filter category. We also evaluated our model based on both individual $32 \times 32 \times 3$ image labeling and prediction using a majority vote voting scheme.
+For final model evaluation, we evaluated the overall accuracy, precision, recall, and F1-score for each filter category using the testing set. We also evaluated our model based on both individual $32 \times 32 \times 3$ image labeling and prediction using a majority vote voting scheme.
 
 We also compared this approach to the results of our previous approach, where we extracted RGB color histograms as features to an image and passing that to a feed-forward neural network model for classification.
 
@@ -170,11 +170,11 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODA1MzA0MzMsLTQzMDY0NTI1MiwtMj
-A1MjYwODQyLC0yNTkwMDc1NzMsMTc5MjI4MTE1LDExNDM1NzQ1
-OSwtMzMyMjk5MjA2LDc4NTY3NTI4MiwxNjk0NjI3MDU3LC0xOT
-YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
-NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
-E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
-MF19
+eyJoaXN0b3J5IjpbLTQ5MzI5ODcyNCwtNDMwNjQ1MjUyLC0yMD
+UyNjA4NDIsLTI1OTAwNzU3MywxNzkyMjgxMTUsMTE0MzU3NDU5
+LC0zMzIyOTkyMDYsNzg1Njc1MjgyLDE2OTQ2MjcwNTcsLTE5Nj
+A2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3
+LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMT
+c3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkw
+XX0=
 -->
