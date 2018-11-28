@@ -16,12 +16,18 @@ Previously, the low accuracies of our simple filter identification model, with a
 Here, we follow a new approach in filter prediction using convolutional neural networks. It was able to achieve an average accuracy of 95% and a lowest F1 score across all categories improved to be 0.88.
 
 ## Teaser Figure
+
 ## Introduction
 Filtered photos have become ubiquitous on social media platforms such as Snapchat, Instagram, Flickr, and more. For the casual eye, the subtlety of these filters can make it hard to distinguish between filtered and unfiltered images on social media, leading to a false perceptual model of how natural images look, skewing our expectations about reality. We hope this project will help bring more transparency into how images are often edited by identifying whether a common image filter have been applied to an image, and expose users to the natural state of these images. We believe that transparency in the image editing process is important in raising awareness about deliberate modifications to perceptions of reality, allowing content consumers to enjoy the edited content while being aware of their true nature.
 
 Not to be confused with filters in the computer vision setting, which are often used to better extract information from an image, filters in the social media setting describe a predefined set of modifications to an image that attempts enhance its human visual appeal. Most commonly, these filters come in the form of color balance adjustments and can be represented as tweaks to the color curves of an RGB image. A color curve $f: [0, 255] \to [0, 255]$ is a continuous function that remaps the intensities in each color channel. Modification to the color curve allows the user to non-uniformly boost or decrease color intensities at varying ranges to create various effects such as increasing contrast or creating color shifts (e.g. \cref{fig:color_curve} demonstrates a boost of blues in shadows while decreasing blues in highlights). Some filters also include additional effects such as blurring/sharpening using convolution kernels, the addition of borders, and the application of vignette darkening at the edges.
 
-image!!!!
+```
+<!---
+your comment goes here
+and here
+-->
+```
 
 For the purposes of this project, we limit our scope and define a filter as a pair $(f, g)$ where $f: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ is a function that maps every individual color (consisting of 3 channels each with a real value in the $[0, 1]$ range) to some color in the same range, and $g \in \mathbb{R}^{3 \times 3}$ is a convolution kernel that can be used for blurring and sharpening among other effects. We assume that a filter is applied first by passing each pixel of an image through $f$, and then convolving the image with $g$, extending the edges by repeating the last row and column of pixels as to preserve the shape of the image.
 
@@ -58,7 +64,7 @@ While there are infinitely many filters possible, popular social media platforms
 
 Given the scant amount of existing literature on the problem of filter identification aside from [^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
-\subsection*{Filter classification}
+## Filter classification
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
 
 For feature extraction, because color curves are a major component of many of the popular image filters, we decided to use color histograms to extract global color information from the image. Furthermore, because these color curve modifications are often applied independently in each RGB channel, we create separate color intensity histograms for each color channel and concatenate them together to generate the features for a given image.
@@ -86,7 +92,9 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 ## Experiments/Results
 
 ## Qualitative Results
+
 ## Conclusion and Future Work
+
 ## References
 
 [^ieee_inversion]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
@@ -100,9 +108,9 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNj
-A5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1
-MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyOD
-Y3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1
-XX0=
+eyJoaXN0b3J5IjpbLTIwMzA4MzA2NzgsNjc4NDEzMDczLDE1Mz
+I4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcs
+LTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOT
+c3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEy
+NiwxOTAzOTA5NjA1XX0=
 -->
