@@ -106,9 +106,7 @@ We trained in rounds of 5 epochs with various batch sizes until validation accur
 
 We evaluated our model during training using overall accuracy on the validation set for each individual $32 \times 32 \times 3$  image. 
 
-For final model evaluation, we evaluated the overall accu
-
-our test set both based on individual classificationbut also following the voting scheme.
+For final model evaluation, we evaluated the overall accuracy, precision, recall, and F1-score for each filter category. We also evaluated our model based on individual $32 \times 32 \times 3$ labeling from ouour test set both based on individual classificationbut also following the voting scheme.
 
 <!--
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
@@ -166,7 +164,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTY4MTI3ODUsMTY5NDYyNzA1NywtMT
+eyJoaXN0b3J5IjpbLTEwNDA4Mjc4OTMsMTY5NDYyNzA1NywtMT
 k2MDY3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5
 MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMj
 ExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5
