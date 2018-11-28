@@ -94,9 +94,10 @@ $$ \text{9000 images} \times \text{6 filters} + \text{9000 original images} = \t
 
 $$ \text{63000 images} \times 0.8955 \approx 56420$$
 
-$$ \text{63000 images} \times 0.45\approx $$
+$$ \text{63000 images} \times 0.45\approx 280$$
 
- \text{1800 original images} = \text{12600 testing images} $$
+$$ \text{63000 images} \times 0.1 = 6300$$
+
 
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
 
@@ -153,11 +154,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY2MDUxNTQ5MCwxNjk0NjI3MDU3LC0xOT
-YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
-NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
-E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
-MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MD
-E0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4
-XX0=
+eyJoaXN0b3J5IjpbLTExMTgzNTYyOTEsMTY5NDYyNzA1NywtMT
+k2MDY3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5
+MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMj
+ExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5
+OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05Nj
+AxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3Nzgy
+OF19
 -->
