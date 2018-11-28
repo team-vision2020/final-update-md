@@ -10,7 +10,7 @@ Given the prevalence of photo editing and filtering on popular social media plat
 We propose an end-to-end system that will take an image from the user, identify probabilities for which common image filters were applied to the image, and apply the most likely filter inverse. We present both the filter probabilities and the inverted image to the user. We utilize features in the form of color histograms and scene details to extract a sense of natural color distributions and use neural networks both to determine the probabilities for applied filters and to invert an image given its most likely filter.
 
 From our previous experiments, we were able to improve our results on classify images by the filter applied to it (from our predefined set of six Instagram filters) while distinguishing it from natural (unfiltered) images with an accuracy of 60% to 98% depending on the characteristics of the filter such as the amount of deviation from the original image.
-Let $E(I, I')$ be the average per-pixel mean of the sum absolute differences in intensity across all color channels of images $I$ and $I'$ (_Equation 1_.) For inverting images given a known filter, we were previously able to obtain a pseudo-inverse of the image with an average error $E$ of 1\% and our end-to-end system detected and inverted filters with an average error $E$ of 5.5\% between our output image and the original unfiltered version. In comparison, the baseline error $E$ between filtered and unfiltered images was found to be 8.4\%.
+Let $E(I, I')$ be the average per-pixel mean of the sum absolute differences in intensity across all color channels of images $I$ and $I'$ (_Equation 1.) For inverting images given a known filter, we were previously able to obtain a pseudo-inverse of the image with an average error $E$ of 1\% and our end-to-end system detected and inverted filters with an average error $E$ of 5.5\% between our output image and the original unfiltered version. In comparison, the baseline error $E$ between filtered and unfiltered images was found to be 8.4\%.
 
 Previously, the low accuracies of our simple filter identification model, with an average accuracy of 78% and a lowest F1 score across all filters of 0.61, presented a bottleneck for the overall quality of our filter inverses.
 Here, we follow a new approach in filter prediction using convolutional neural networks. It was able to achieve an average accuracy of 95% and a lowest F1 score across all categories improved to be 0.88.
@@ -29,13 +29,12 @@ Not to be confused with filters in the computer vision setting, which are often 
 
 <!---
 TODO: Add missing image
--->
 
 For the purposes of this project, we limit our scope and define a filter as a pair $(f, g)$ where $f: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ is a function that maps every individual color (consisting of 3 channels each with a real value in the $[0, 1]$ range) to some color in the same range, and $g \in \mathbb{R}^{3 \times 3}$ is a convolution kernel that can be used for blurring and sharpening among other effects. We assume that a filter is applied first by passing each pixel of an image through $f$, and then convolving the image with $g$, extending the edges by repeating the last row and column of pixels as to preserve the shape of the image.
 
 While many commercial filters may also contain additional effects such as borders and vignettes, filters are mostly characterized by how they shift the color curves globally and their blur/sharpen/emboss effects. Therefore, for the scope of this project, we choose filters which does not have these additional effect.
 
-Though our work relates to many other fields of computer vision, such as image denoising and brightening images[^Dark], not much work directly focuses on end to end filter identification and inversion. One publication that we found [^ieee_inversion] for identification depends heavily on prior knowledge of the camera demosaicing algorithm which is not always readily available. We thus chose to develop our own identification system.
+Though our work relates to many other fields of computer vision, such as image denoising and brightening imagesDark], not much work directly focuses on end to end filter identification and inversion. One publication that we found ie_nversion for identification depends heavily on prior knowledge of the camera demosaicing algorithm which is not always readily available. We thus chose to develop our own identification system.
 
 In many of these settings such as image denoising or brightening, the modifications applied to the image (noise, etc.) are either consistent across the dataset or is known a priori. Our task is different from these previous work as our filter functions are unknown, but we have examples of unfiltered \& filtered images. Therefore, we decompose this task of filter inversion into two separate tasks, one is filter identification given an input image and the other is filter inversion given a known filter. Filter identification for an image is a classification task while filter inversion is a regression task estimating the filter inverses.
 
@@ -44,9 +43,8 @@ The problem of filter identification mirrors closely that of identification of t
 ## Approach
 
 Our approach splits the end-to-end task of filter inversion into two steps:
-
-* Generate a probability vector for possible filters applied to a given image. (Filter classification)
-* With the image and the probability vector as inputs, apply a learned inverse filter onto the image to recover the unfiltered image. (Filter inversion)
+ Generate a probability vector for possible filters applied to a given image. (Filter classification)
+ With the image and the probability vector as inputs, apply a learned inverse filter onto the image to recover the unfiltered image. (Filter inversion)
 
 While there are infinitely many filters possible, popular social media platforms have a few pre-selected filters that are widely used. Therefore, we constrain the scope of our filter inversion by assuming input images were filtered at most once by a filter from a known set. To accurately model a real-world application, our list comprises of the following six popular Instagram filters:
 
@@ -54,10 +52,9 @@ While there are infinitely many filters possible, popular social media platforms
 TODO: Add missing image
 -->
 
-Given the scant amount of existing literature on the problem of filter identification aside from [^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
+Given the scant amount of existing literature on the problem of filter identification aside from ie_nverion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
 ## Filter classification
-
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
 
 For feature extraction, because color curves are a major component of many of the popular image filters, we decided to use color histograms to extract global color information from the image. Furthermore, because these color curve modifications are often applied independently in each RGB channel, we create separate color intensity histograms for each color channel and concatenate them together to generate the features for a given image.
@@ -85,6 +82,8 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 ## Conclusion and Future Work
 
+ References
+
 [^ieee_inversion]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
 
 [^Keras]: F. Chollet and others, ''Keras'', GitHub, 2015.
@@ -95,9 +94,11 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 [^obregon]: D. Freire-Obregon, F. Narducci, S. Barra, and M. Castrillon-Santana. "Deep learning for source camera identification on mobile devices", [arXiv](https://arxiv.org/abs/1710.01257), 2017.
 
-[^huang]: N. Huang, J. He, X. Xuan, G. Liu, and C. Chang. "Identification of the source camera of images based on convolutional neural network", Digital Investigation, 2018.
+[^huang]: N. Huang, J. He, X. Xuan, G. Liu, and C. Chang. "<!-- [NaHuanga](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[JingshaHea](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[NafeiZhua](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[XinggangXuana](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[GongzhengLiua](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[ChengyueChangb](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!) -->
 
-[^kuzin]: A. Kuzin, A. Fattakhov, I. Kibardin, V. Iglovikov, and R. Dautov. "Camera Model Identification Using Convolutional Neural Networks", [arXiv](https://arxiv.org/abs/1810.02981), 2018.
+[^huang]: N. Huang, J. Hea, XIdentification of the source camera of images based on convolutional neural network", Digital Investigation, 20 https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18.
+
+[^kuzin]: A. Kuzin, A. Fattakhov, I. Kibardin, V. Iglovikov, and R. Dautov. "Camera Model Identification Using Convolutional Neural Networks", [arXiv]( https://arxiv.org/abspdf/1810.02981), 2018..pdf
 
 [^Instafilters]: M. Pratusevich, "Instagram Filters in 15 Lines of Python", Practice Python, 2016. _Retrieved from [URL](https://www.practicepython.org/blog/2016/12/20/instagram-filters-python.html)_.
 
@@ -112,9 +113,10 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY1OTIyNzEzLC0yMTE3NzQ2OTg1LDIwMj
-k3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYy
-LC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OT
-g5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3
-LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1XX0=
+eyJoaXN0b3J5IjpbNzgwODg1NTAzLDY2NTkyMjcxMywtMjExNz
+c0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAs
+MTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxND
+c0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwt
+MTg2Mjg2NzUzNyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMz
+kwOTYwNV19
 -->
