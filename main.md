@@ -87,14 +87,37 @@ One problem we encountered was that because each image passes through 6 differen
 ### Filter Inversion
 
 
-### End to End Neural Network
-From the promising result obtained from the use of convolution neural network for filter inversion, we further adapted our CNN architecture to handle end to end filter inversion. This network would directly perform filter inversion on a given image without prior knowledge on the image filter. 
-
-We utilize Keras[^Keras] and heavily modified our network 
-
-ork that takes in $32 \times 32 \times 3$ images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through. We use categorical cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
-
 ## Experiments/Results
+We perform our experiments using 9000 $128\ \times\ 128$ images from 10 different categories from the MiniPlaces dataset[^Places] passed through 6 different filters [^TODO: filters] to create a total dataset of 63000 images (including the original images.) We split these images into 90\% training and 10\% testing sets with assurance that images from the testing set and their filtered derivatives are not in the training set. Therefore, our training set consists of 50400 images while our testing set consisted of 12600 images.
+
+\begin{figure}[H]
+    \centering
+    \begin{align*}
+        \text{7200 images} \times \text{6 filters} + \text{7200 original images} &= \text{50400 training images}\\
+        \text{1800 images} \times \text{6 filters} + \text{1800 original images} &= \text{12600 testing images}
+    \end{align*}
+    \caption{Detection dataset}
+    \label{fig:detection_dataset}
+\end{figure}
+
+While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
+
+Given the simplicity of features we extract, we expected a simple model to provide comparative performance in the filter identification task. However, after experimentation, adding multiple layers to our model increased our model accuracy by upwards of 8\%. It is possible that applying a filter might affect an image's color histogram in more complex ways than we assumed and increasing the number of layers enabled the network to better understand the effect of filter application on an image's color histogram.
+
+Our final neural network contains four size 32 layers, one size 16 layer, two size 8 layers, and an output softmax layer with 7 nodes, in that order. The network is fully connected and every layer except the last uses \textit{ReLU} activation. The softmax layer produces a probability vector for the predicted filter. An input feature vector for this model contains $255 \times 3 = 765$ features. The main hyperparameter for future experimentation is the number of bins used here, or in general, what we choose to feed into our network. When stepping through increasing bin count, we found performance plateaued at 255 bins.
+
+We trained our neural network classifier for a total of 100 epochs with a batch size of 128 using the Adam optimizer \cite{Adam} and the cross-entropy loss function.
+
+One improvement to note is that we did not utilize validation set (which we should have) during our training process so we do not have an exact measure of overfitting. However, we evaluated our model performance different number of epochs and there were no noticeable increase accuracy from stopping before or going past 100 epochs.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/confusionMatrix.jpg}
+    \caption{Confusion matrix for detection NN}
+    \label{fig:confusion_matrix}
+\end{figure}
+
+Our initial approach evaluated our model based on the overall accuracy in the prediction (filter with maximum probability from our probability vector). However, we noticed visually subtler filters naturally had lower identification rates, so we refined our statistics to distinguish success for different filters. We thus also looked at the precision, recall, F1 score, and the confusion matrix to evaluate model performance on individual filters. For comparison, the baseline accuracy of a random classifier is 0.143.
 
 ## Qualitative Results
 
@@ -132,11 +155,11 @@ ork that takes in $32 \times 32 \times 3$ images, pass them through two convolut
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjA2NzQ1LC0xNzk5MTE3Njg1LC05Nj
-gyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODEx
-MCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nz
-g0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAz
-MSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MT
-U2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1
-XX0=
+eyJoaXN0b3J5IjpbLTIwNTAxODc2MjcsLTE5NjA2NzQ1LC0xNz
+k5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2
+OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMj
+AyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkw
+NjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMD
+c5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1
+MzddfQ==
 -->
