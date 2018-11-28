@@ -61,7 +61,7 @@ While there are infinitely many filters possible, popular social media platforms
 TODO: Add missing image
 -->
 
-Given the scant amount of existing literature on the problem of filter identification aside from ie_[^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article Instafilters, which uses `numpy` functions, specifically `linspace and `interp`, to modify the color curves of each specific channel. We obtained curve parameters for each filter from Instafilters_tutorial and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
+Given the scant amount of existing literature on the problem of filter identification aside from ie_[^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article [^Instafilters], which uses `numpy` functions, specifically `linspace` and `interp`, to modify the color curves of each specific channel. We obtained curve parameters for each filter from [^Instafilters_tutorial] and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
 ## Filter classification
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
@@ -130,11 +130,11 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2ODIyOTA2NCwtNzM2NDI3MzA5LDUwMj
-Q1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAz
-LC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1Mz
-I4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcs
-LTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOT
-c3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEy
-Nl19
+eyJoaXN0b3J5IjpbMTIxMDQ4NTIyNiwtOTY4MjI5MDY0LC03Mz
+Y0MjczMDksNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODEx
+MCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nz
+g0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAz
+MSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MT
+U2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1
+XX0=
 -->
