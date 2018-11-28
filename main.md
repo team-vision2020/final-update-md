@@ -100,7 +100,7 @@ $$ \text{63000 images} \times 0.1 = 6300$$
 
 For filter identification, because each image in the dataset is $128 \times 128 \times 3$, we further subdivide each image into 16 disjoint $32 \times 32 \times 3$ image for training, leading to a total of 902720 training images and 4480 validation images. Each image also have an associated 7-dimensional one-hot output vector that indicates the ground truth for which filter has been applied to the image.
 
-We adopted the approach in [^obregon] and found that slight tweaks in its hyperparameters was sufficient to provide strong results. We applied greater modifications to the architecture such as a
+We adopted the approach in [^obregon] and found that slight tweaks in its hyperparameters was sufficient to provide strong results. We test greater modifications to the architecture such as adding additional convolution layers and tweaking number of neurons in the fully connected layers but found decreasing model complexity generally decrease accuracy and increasing complexity did not lead to meaningful 
 
 Specifically, we tuned the negative slope coefficient on the leaky ReLU and found a sweet spot of 0.3 to both allow fast convergence and robustness to the variation of 
 
@@ -160,7 +160,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQzODcyMjMwLDE2OTQ2MjcwNTcsLTE5Nj
+eyJoaXN0b3J5IjpbMzk3NjkyMjc0LDE2OTQ2MjcwNTcsLTE5Nj
 A2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3
 LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMT
 c3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkw
