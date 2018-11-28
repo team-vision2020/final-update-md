@@ -72,7 +72,8 @@ We utilize Keras[^Keras] to create a convolutional neural network that takes in 
 
 We compared the use of ReLU and leaky ReLU activation function in our network. We found that the use of ReLU often caused our network to not train at all and found that leaky ReLU  provides vastly superior results in our use case. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3.
 
-While many papers utilizes drop out layers to reduce overfitting in the training process, we have found no evidence of overfitting in our netw
+While many papers utilizes regularization and dropout layers to reduce overfitting in the training process, we have found no evidence of overfitting in our network due to our large number of training examples (over 900k images). Therefore, we did not use any regularization and dropout layers.
+
 #### Network Architecture
 [TODO Probably rip image from paper? No clue how they make CNN diagrams]
 
@@ -128,11 +129,11 @@ Because the architecture presented in the paper treats only 32x32x3 images while
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNjMyMzIyNSwtMTc5OTExNzY4NSwtOT
-Y4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgx
-MTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNj
-c4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIw
-MzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2Nj
-E1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEz
-NV19
+eyJoaXN0b3J5IjpbLTE3ODkyNzYzODUsLTE3OTkxMTc2ODUsLT
+k2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4
+MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLD
+Y3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIy
+MDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNj
+YxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMx
+MzVdfQ==
 -->
