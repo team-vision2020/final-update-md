@@ -118,7 +118,7 @@ Average accuracy from feeding additional context information to neural network m
 Result from Individual Image classification:
 
 
-| Tables        | Are           | Cool  |
+| Metric \ Filter| Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
@@ -182,7 +182,7 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyNDgzODg0OCwtNDMwNjQ1MjUyLC0yMD
+eyJoaXN0b3J5IjpbMTkzOTE2NzUyMywtNDMwNjQ1MjUyLC0yMD
 UyNjA4NDIsLTI1OTAwNzU3MywxNzkyMjgxMTUsMTE0MzU3NDU5
 LC0zMzIyOTkyMDYsNzg1Njc1MjgyLDE2OTQ2MjcwNTcsLTE5Nj
 A2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3
