@@ -88,7 +88,7 @@ One problem we encountered was that because each image passes through 6 differen
 
 
 ### End to End Neural Network
-From the resul
+From the promising result obtained from the use of convolution neural network for filter inversion, we further adapted our CNN architecture to handle end to end filter inversion. This network would perform 
 
 ## Experiments/Results
 
@@ -128,11 +128,11 @@ From the resul
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNDI4MTkxNTMsLTE3OTkxMTc2ODUsLT
-k2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4
-MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLD
-Y3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIy
-MDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNj
-YxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMx
-MzVdfQ==
+eyJoaXN0b3J5IjpbMzgwNjA1NzM5LC0xNzk5MTE3Njg1LC05Nj
+gyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODEx
+MCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nz
+g0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAz
+MSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MT
+U2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1
+XX0=
 -->
