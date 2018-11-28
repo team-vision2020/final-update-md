@@ -66,7 +66,9 @@ Given the scant amount of existing literature on the problem of filter identific
 ## Filter classification
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
 
-As convolutional neural network architecture was able to obtain good results in the problem of source camera identification, we follow the architecture detailed in the paper by D. Freire-Obregon[^obregon] and apply their technique to this problem space. We create a convolutional neural network that takes in 32x32x3 RGB images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts 
+As convolutional neural network architecture was able to obtain good results in the problem of source camera identification, we follow the architecture detailed in the paper by D. Freire-Obregon[^obregon] and apply their technique to this problem space. We create a convolutional neural network that takes in 32x32x3 RGB images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through.
+
+As noted in the paper, we utilize a leaky ReLU activation throughout the entire network 
 
 For feature extraction, because color curves are a major component of many of the popular image filters, we decided to use color histograms to extract global color information from the image. Furthermore, because these color curve modifications are often applied independently in each RGB channel, we create separate color intensity histograms for each color channel and concatenate them together to generate the features for a given image.
 
@@ -125,7 +127,7 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzOTk5OTYwNSw1MDI0NTI5MDcsMjAwMz
+eyJoaXN0b3J5IjpbLTY5ODAzMjg3OCw1MDI0NTI5MDcsMjAwMz
 I0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4
 NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MT
 YwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYs
