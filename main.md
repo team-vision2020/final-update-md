@@ -139,7 +139,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 
 ## Conclusion and Future Work
 
-Though we considered 
+We initially considered using a structured approach that used nearest neighbors in a large corpus of knowledge about color distributions of 
 
 ## References
 
@@ -171,11 +171,11 @@ Though we considered
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwOTA4MTgzMiwtMzMyMjk5MjA2LDc4NT
-Y3NTI4MiwxNjk0NjI3MDU3LC0xOTYwNjc0NSwtMTc5OTExNzY4
-NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMD
-I2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1
-ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OT
-I1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTNd
-fQ==
+eyJoaXN0b3J5IjpbMTE0MzU3NDU5LC0zMzIyOTkyMDYsNzg1Nj
+c1MjgyLDE2OTQ2MjcwNTcsLTE5NjA2NzQ1LC0xNzk5MTE3Njg1
+LC05NjgyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMj
+YwODExMCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4
+MSw2Nzg0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5Mj
+UyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxM119
+
 -->
