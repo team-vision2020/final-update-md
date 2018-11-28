@@ -17,17 +17,19 @@ Here, we follow a new approach in filter prediction using convolutional neural n
 
 ## Teaser Figure
 
+<!---
+TODO: Add missing image
+-->
+
 ## Introduction
+
 Filtered photos have become ubiquitous on social media platforms such as Snapchat, Instagram, Flickr, and more. For the casual eye, the subtlety of these filters can make it hard to distinguish between filtered and unfiltered images on social media, leading to a false perceptual model of how natural images look, skewing our expectations about reality. We hope this project will help bring more transparency into how images are often edited by identifying whether a common image filter have been applied to an image, and expose users to the natural state of these images. We believe that transparency in the image editing process is important in raising awareness about deliberate modifications to perceptions of reality, allowing content consumers to enjoy the edited content while being aware of their true nature.
 
 Not to be confused with filters in the computer vision setting, which are often used to better extract information from an image, filters in the social media setting describe a predefined set of modifications to an image that attempts enhance its human visual appeal. Most commonly, these filters come in the form of color balance adjustments and can be represented as tweaks to the color curves of an RGB image. A color curve $f: [0, 255] \to [0, 255]$ is a continuous function that remaps the intensities in each color channel. Modification to the color curve allows the user to non-uniformly boost or decrease color intensities at varying ranges to create various effects such as increasing contrast or creating color shifts (e.g. \cref{fig:color_curve} demonstrates a boost of blues in shadows while decreasing blues in highlights). Some filters also include additional effects such as blurring/sharpening using convolution kernels, the addition of borders, and the application of vignette darkening at the edges.
 
-```
 <!---
-your comment goes here
-and here
+TODO: Add missing image
 -->
-```
 
 For the purposes of this project, we limit our scope and define a filter as a pair $(f, g)$ where $f: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ is a function that maps every individual color (consisting of 3 channels each with a real value in the $[0, 1]$ range) to some color in the same range, and $g \in \mathbb{R}^{3 \times 3}$ is a convolution kernel that can be used for blurring and sharpening among other effects. We assume that a filter is applied first by passing each pixel of an image through $f$, and then convolving the image with $g$, extending the edges by repeating the last row and column of pixels as to preserve the shape of the image.
 
@@ -48,23 +50,14 @@ Our approach splits the end-to-end task of filter inversion into two steps:
 
 While there are infinitely many filters possible, popular social media platforms have a few pre-selected filters that are widely used. Therefore, we constrain the scope of our filter inversion by assuming input images were filtered at most once by a filter from a known set. To accurately model a real-world application, our list comprises of the following six popular Instagram filters:
 
-\def\filterimagewidth{3cm}
-\begin{figure}[H]
-    \centering
-    \subfloat[Original image]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/original.jpg}}
-    \subfloat[Clarendon]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/clarendon.jpg}}
-    \subfloat[Gingham]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/gingham.jpg}}
-    \subfloat[Juno]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/juno.jpg}}\\
-    \subfloat[Lark]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/lark.jpg}}
-    \subfloat[Gotham]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/gotham.jpg}}
-    \subfloat[Reyes]{\label{fig:original}\includegraphics[width=\filterimagewidth]{images/reyes.jpg}}
-    \caption{Selected filters}
-    \label{fig:filters}
-\end{figure}
+<!---
+TODO: Add missing image
+-->
 
 Given the scant amount of existing literature on the problem of filter identification aside from [^ieee_inversion], there were no established processes for filtering large numbers of images using commercial filters. We were prompted to create our own image filtering pipeline. Since Instagram filters are not available outside of their platform, we imitated these filters by manually modifying each color curve. We referenced channel adjustment code from an online article \cite{Instafilters}, which uses \verb|numpy| functions, specifically \verb|linspace| and \verb|interp|, to modify the color curves of each specific channel. We obtained curve parameters for each filter from \cite{Instafilters_tutorial} and passed them onto the channel adjustment code to create an imitation of commercial filters. We then run each imitation filter over our library of unfiltered images to create our dataset.
 
 ## Filter classification
+
 Our approach to filter classification takes in an input image and outputs a probability vector for the possible filters applied to the input image. We utilize a neural network model to generate this probability vector from features extracted from the input image.
 
 For feature extraction, because color curves are a major component of many of the popular image filters, we decided to use color histograms to extract global color information from the image. Furthermore, because these color curve modifications are often applied independently in each RGB channel, we create separate color intensity histograms for each color channel and concatenate them together to generate the features for a given image.
@@ -77,12 +70,9 @@ We utilize Keras[^keras] to create a sequential, feed-forward neural network wit
 
 One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training and testing set.
 
-\begin{figure}[H]
-    \centering
-    \input{detection_nn.tex}
-    \caption{Detection NN Architecture}
-    \label{fig:detection_nn}
-\end{figure}
+<!---
+TODO: Add missing image
+-->
 
 More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. The final output layer is a softmax layer and outputs a probability vector of filter applied to the image. Our current network's input size is only $32 \times 32 \times 3$ and are trained using images of these size. For images larger than the network input size of $32 \times 32 \times 3$, we subdivide the source image into separate patches and perform voting based on the classification for each subpatch.
 
@@ -108,9 +98,9 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzA4MzA2NzgsNjc4NDEzMDczLDE1Mz
-I4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcs
-LTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOT
-c3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEy
-NiwxOTAzOTA5NjA1XX0=
+eyJoaXN0b3J5IjpbMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMj
+gxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1Nywt
+OTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nz
+c4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2
+LDE5MDM5MDk2MDVdfQ==
 -->
