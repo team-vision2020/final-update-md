@@ -90,9 +90,11 @@ One problem we encountered was that because each image passes through 6 differen
 ## Experiments/Results
 We perform our experiments using 9000 $128\ \times\ 128 \times 3$ images from 10 different categories from the MiniPlaces dataset[^Places] passed through 6 different filters [^TODO: filters] to create a total dataset of 63000 images (including the original images.) We split these images into 89.55% training 0.45% validation and 10\% testing sets with assurance that each image and its derivatives all belong to a single set. Therefore, our training set consists of 56420 images, our validation set consisted of 280 images, and our testing set consisted of 6300 images.
 
-$ \text{7200 images} \times \text{6 filters} + \text{7200 original images} = \text{50400 training images}$
+$$ \text{9000 images} \times \text{6 filters} + \text{9000 original images} = \text{63000 training images}$$
 
-$$ \text{1800 images} \times \text{6 filters} + \text{1800 original images} = \text{12600 testing images} $$
+$$ \text{63000 images} \times .8955 = 
+
+ \text{1800 original images} = \text{12600 testing images} $$
 
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
 
@@ -149,11 +151,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY0OTY4NzQwLC0xOTYwNjc0NSwtMTc5OT
-ExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3
-LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMj
-k3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYy
-LC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OT
-g5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3
-XX0=
+eyJoaXN0b3J5IjpbMTY5NDYyNzA1NywtMTk2MDY3NDUsLTE3OT
+kxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5
+NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMD
+I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
+MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNz
+k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
+N119
 -->
