@@ -99,9 +99,11 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 <!-- [NaHuanga](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[JingshaHea](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[NafeiZhua](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[XinggangXuana](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[GongzhengLiua](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!)[ChengyueChangb](https://www.sciencedirect.com/science/article/pii/S1742287618302664#!) -->
 
-[^huang]: N. Huang, J. Hea, XIdentification of the source camera of images based on convolutional neural network https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
+[^huang]: N. Huang, J. He, X. Xuan, G. Liu, and C. Chang. "Identification of the source camera of images based on convolutional neural network", Digital Investigation, 2018.
 
-[^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
+<!-- [Artur Kuzin](https://arxiv.org/search/cs?searchtype=author&query=Kuzin%2C+A), [Artur Fattakhov](https://arxiv.org/search/cs?searchtype=author&query=Fattakhov%2C+A), [Ilya Kibardin](https://arxiv.org/search/cs?searchtype=author&query=Kibardin%2C+I), [Vladimir Iglovikov](https://arxiv.org/search/cs?searchtype=author&query=Iglovikov%2C+V), [Ruslan Dautov](https://arxiv.org/search/cs?searchtype=author&query=Dautov%2C+R) -->
+
+[^kuzin]: A. Kuzin, A. Fattakhov, I. Kibardin, V. Iglovikov, and "Camera Model Identification Using Convolutional Neural Networks"
 
 [^Instafilters]: M. Pratusevich, "Instagram Filters in 15 Lines of Python", Practice Python, 2016. _Retrieved from [URL](https://www.practicepython.org/blog/2016/12/20/instagram-filters-python.html)_.
 
@@ -116,7 +118,7 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNzU5NTQxMiwtMjExNzc0Njk4NSwyMD
+eyJoaXN0b3J5IjpbLTMwMzc4NzI2OCwtMjExNzc0Njk4NSwyMD
 I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
 MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNz
 k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
