@@ -29,6 +29,7 @@ Not to be confused with filters in the computer vision setting, which are often 
 
 <!---
 TODO: Add missing image
+-->
 
 For the purposes of this project, we limit our scope and define a filter as a pair $(f, g)$ where $f: \mathbb{R}^3 \rightarrow \mathbb{R}^3$ is a function that maps every individual color (consisting of 3 channels each with a real value in the $[0, 1]$ range) to some color in the same range, and $g \in \mathbb{R}^{3 \times 3}$ is a convolution kernel that can be used for blurring and sharpening among other effects. We assume that a filter is applied first by passing each pixel of an image through $f$, and then convolving the image with $g$, extending the edges by repeating the last row and column of pixels as to preserve the shape of the image.
 
@@ -113,10 +114,10 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA5ODg2MDE3OSwxMzAyNjA4MTEwLDc4MD
-g4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3
-MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMj
-k2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2
-LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMxMzUsLTE5Nj
-cyNjUxMjYsMTkwMzkwOTYwNV19
+eyJoaXN0b3J5IjpbOTE3MTI4OTMsMTMwMjYwODExMCw3ODA4OD
+U1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMs
+MTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Nj
+g1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0
+OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1LC0xOTY3Mj
+Y1MTI2LDE5MDM5MDk2MDVdfQ==
 -->
