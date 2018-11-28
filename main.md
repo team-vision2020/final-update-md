@@ -24,13 +24,11 @@ For the purposes of this project, we limit our scope and define a filter as a pa
 
 While many commercial filters may also contain additional effects such as borders and vignettes, filters are mostly characterized by how they shift the color curves globally and their blur/sharpen/emboss effects. Therefore, for the scope of this project, we choose filters which does not have these additional effect.
 
-Though our work relates to many other fields of computer vision, such as image denoising and brightening images \cite{Dark}, not much work directly focuses on end to end filter identification or inversion. One publication that we found \cite{IEEE_Inversion} for identification depends heavily on prior knowledge of the camera demosaicing algorithm which is not always readily available. We thus chose to develop our own identification system.
+Though our work relates to many other fields of computer vision, such as image denoising and brightening images \cite{Dark}, not much work directly focuses on end to end filter identification and inversion. One publication that we found \cite{IEEE_Inversion} for identification depends heavily on prior knowledge of the camera demosaicing algorithm which is not always readily available. We thus chose to develop our own identification system.
 
 In many of these settings such as image denoising or brightening, the modifications applied to the image (noise, etc.) are either consistent across the dataset or is known a priori. Our task is different from these previous work as our filter functions are unknown, but we have examples of unfiltered \& filtered images. Therefore, we decompose this task of filter inversion into two separate tasks, one is filter identification given an input image and the other is filter inversion given a known filter. Filter identification for an image is a classification task while filter inversion is a regression task estimating the filter inverses.
 
-
-
-The problem of filter identification mirrors closely that identification of camera source based on camera noise and there are several piece of literature regarding this topic. While there have been several paper on this topic previously using traditional expert feature based techniques [need references], we particularly follow convolutional neural network based approaches that have shown good results in the past two years, specifically
+The problem of filter identification actually mirrors closely that of identification of camera source based on camera noise and there are several piece of literature regarding this topic. While there have been several paper on this topic previously using traditional expert feature based techniques [need references], we particularly follow convolutional neural network based approaches that have shown good results in the past two years, specifically
 
 ##### Deep learning for source camera identification on mobile devices
 https://arxiv.org/abs/1710.01257
@@ -56,7 +54,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4NDY3NjQ5Myw0OTM5Nzc4MjgsLTE4Nj
-I4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2
-MDVdfQ==
+eyJoaXN0b3J5IjpbMTk2Mzc2MjMsNDkzOTc3ODI4LC0xODYyOD
+Y3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1
+XX0=
 -->
