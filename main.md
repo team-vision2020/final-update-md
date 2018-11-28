@@ -100,7 +100,7 @@ $$ \text{63000 images} \times 0.1 = 6300$$
 
 For filter identification, because each image in the dataset is $128 \times 128 \times 3$, we further subdivide each image into 16 disjoint $32 \times 32 \times 3$ image for training, leading to a total of 902720 training images and 4480 validation images. Each image also have an associated 7-dimensional one-hot output vector that indicates the ground truth for which filter has been applied to the image.
 
-Because the approach in [^obregon] h
+We adopted the approach in [^obregon] and tuned the resulting architecture until we able to obtain good results using mostly r
 
 
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
@@ -158,11 +158,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIzNzU2MjgwNiwxNjk0NjI3MDU3LC0xOT
-YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
-NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
-E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
-MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MD
-E0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4
-XX0=
+eyJoaXN0b3J5IjpbLTEwODY2NDkwNTAsMTY5NDYyNzA1NywtMT
+k2MDY3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5
+MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMj
+ExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5
+OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05Nj
+AxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3Nzgy
+OF19
 -->
