@@ -118,9 +118,9 @@ Average accuracy from feeding additional context information to neural network m
 Result from Individual Image classification:
 
 
-| Metric \ Filter| Original | Clarendon | Clarendon | Clarendon | Clarendon | Clarendon |
+| Metric \ Filter| Identity| Clarendon | Clarendon | Clarendon | Clarendon | Clarendon |
 | ------------- |:-------------:| -----:|-----:|-----:|-----:|-----:|-----:|-----:|-----:|
-| Precision     |  right-aligned | $1600 |
+| Precision     |  0.967 0.992 | $1600 |
 | Recall    	| centered      |   $12 |
 | F1-Score		| are neat      |    $1 |
 
@@ -182,7 +182,7 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODM3MDcwODQ4LDIwNTg3NjE2OTYsLTQzMD
+eyJoaXN0b3J5IjpbNTc1OTc4MTEwLDIwNTg3NjE2OTYsLTQzMD
 Y0NTI1MiwtMjA1MjYwODQyLC0yNTkwMDc1NzMsMTc5MjI4MTE1
 LDExNDM1NzQ1OSwtMzMyMjk5MjA2LDc4NTY3NTI4MiwxNjk0Nj
 I3MDU3LC0xOTYwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0
