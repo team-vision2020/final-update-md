@@ -92,7 +92,9 @@ We perform our experiments using 9000 $128\ \times\ 128 \times 3$ images from 10
 
 $$ \text{9000 images} \times \text{6 filters} + \text{9000 original images} = \text{63000 training images}$$
 
-$$ \text{63000 images} \times .8955 = 
+$$ \text{63000 images} \times 0.8955 \approx 56420$$
+
+$$ \text{63000 images} \times 0.45\approx $$
 
  \text{1800 original images} = \text{12600 testing images} $$
 
@@ -151,11 +153,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NDYyNzA1NywtMTk2MDY3NDUsLTE3OT
-kxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5
-NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMD
-I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
-MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNz
-k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
-N119
+eyJoaXN0b3J5IjpbLTY2MDUxNTQ5MCwxNjk0NjI3MDU3LC0xOT
+YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
+NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
+E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
+MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MD
+E0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4
+XX0=
 -->
