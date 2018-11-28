@@ -68,17 +68,15 @@ Our approach to filter classification takes in an input image and outputs a prob
 
 As convolutional neural network architecture was able to obtain good results in the problem of source camera identification, we follow the architecture detailed in the paper by D. Freire-Obregon[^obregon] and apply their technique to this problem space. 
 
-We utilize Keras[^keras] toWe create a convolutional neural network that takes in $32 \times 32 \times 3$x32x3 RGB images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through.
+We utilize Keras[^eras] toWe create a convolutional neural network that takes in $32 \times 32 \times 3$x32x3 RGB images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through.
 
 
 
-Similar to in the paper, we compared the use of ReLU and leaky ReLU activation function in our network and found that leaky ReLU provided vastly superior results. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
+Similar to in the paper, compared the use of ReLU and leaky ReLU activation function in our network and found that leaky ReLU provided vastly superior results. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
 
-o eur etraciecures ae o otan o eults i te olo soramera infation fo the artere eae thee  reionreon ad ply i echne  t prole sae crae a conotona eura net that tae in   ima, ps the tht cooutiona lae oe a oo ae an o y connete laer eore pas i throu  ot ae  otut  proility eor of w fiter the models the ae ae ee pased throu.
+o eur etraciecures ae o otan o eults i te olo soramera infation fo the artere eae thee  reionreon ad ply i echne  t prole sae crae a conotona eura net that tae in   ima, ps the tht cooutiona lae oe a oo ae an o y connete laer eore pas i throu  ot ae  otut  proility eor of w fiter the models the ae ae ee pased throu. We use categorical cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
 
-a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU[^ReLU] activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU[^ReLU] activation function because it has been consistently shown to provide good performance and training speed for neural networks[^ReLU]. We use a cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
-
-Similar to in the paper, we compared the use of ReLU and leaky ReLU activation function in our network and found that leaky ReLU provided vastly superior results. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
+ weWe further compared the use of ReLU and leaky ReLU activation function in our network and found that leaky ReLU provided vastly superior results. The netWe further determined the non-activation slope of leaky ReLU experimentally to be 0.3
 
 
 One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training and testing set.
@@ -130,8 +128,8 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxMDQ4NTIyNiwtOTY4MjI5MDY0LC03Mz
-Y0MjczMDksNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODEx
+eyJoaXN0b3J5IjpbLTM5OTQxNjY3MywxMjEwNDg1MjI2LC05Nj
+gyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODEx
 MCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nz
 g0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAz
 MSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MT
