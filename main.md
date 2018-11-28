@@ -72,7 +72,7 @@ We utilize Keras[^Keras] to create a convolutional neural network that takes in 
 
 We compared the use of ReLU and leaky ReLU activation function in our network. We found that the use of ReLU often caused our network to not train at all and found that leaky ReLU  provides vastly superior results. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
 
-
+### Network Architecture
 | Name			| Operation		| Configuration|
 | ------------- |:-------------:|        -----:|
 | Input1      | right-aligned | $1600 |
@@ -81,7 +81,13 @@ We compared the use of ReLU and leaky ReLU activation function in our network. W
 | Con2| are neat      |    $1 |
 | LeakyReLU | are neat      |    $1 |
 | Fc| are neat      |    $1 |
+| LeakyReLU | are neat      |    $1 |
 | Fc| are neat      |    $1 |
+| LeakyReLU | are neat      |    $1 |
+| Fc| are neat      |    $1 |
+| Softmax| are neat      |    $1 |
+| Output| are neat      |    $1 |
+
 
 
 
@@ -136,7 +142,7 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0NDc2OTMxMywtMTc5OTExNzY4NSwtOT
+eyJoaXN0b3J5IjpbMTM1Mzk0OTA4MiwtMTc5OTExNzY4NSwtOT
 Y4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgx
 MTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNj
 c4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIw
