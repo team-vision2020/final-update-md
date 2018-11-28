@@ -44,8 +44,9 @@ The problem of filter identification mirrors closely that of identification of t
 ## Approach
 
 Our approach splits the end-to-end task of filter inversion into two steps:
- Generate a probability vector for possible filters applied to a given image. (Filter classification)
- With the image and the probability vector as inputs, apply a learned inverse filter onto the image to recover the unfiltered image. (Filter inversion)
+
+* Generate a probability vector for possible filters applied to a given image. (Filter classification)
+* With the image and the probability vector as inputs, apply a learned inverse filter onto the image to recover the unfiltered image. (Filter inversion)
 
 While there are infinitely many filters possible, popular social media platforms have a few pre-selected filters that are widely used. Therefore, we constrain the scope of our filter inversion by assuming input images were filtered at most once by a filter from a known set. To accurately model a real-world application, our list comprises of the following six popular Instagram filters:
 
@@ -114,10 +115,10 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE3MTI4OTMsMTMwMjYwODExMCw3ODA4OD
-U1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMs
-MTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Nj
-g1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0
-OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1LC0xOTY3Mj
-Y1MTI2LDE5MDM5MDk2MDVdfQ==
+eyJoaXN0b3J5IjpbMjkwNDk3MjI1LDEzMDI2MDgxMTAsNzgwOD
+g1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDcz
+LDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOT
+Y4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYs
+NDkzOTc3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEzNSwtMTk2Nz
+I2NTEyNiwxOTAzOTA5NjA1XX0=
 -->
