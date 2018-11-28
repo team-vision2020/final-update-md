@@ -75,21 +75,20 @@ We compared the use of ReLU and leaky ReLU activation function in our network. W
 While many papers utilizes regularization and dropout layers to reduce overfitting in the training process, we have found no evidence of overfitting in our network due to our large number of training examples (over 900k images). Therefore, we did not use any regularization and dropout layers.
 
 #### Network Architecture
-[TODO Probably rip image from paper? No clue how they make CNN diagrams]
+<!---
+TODO: Add missing image. Probably rip image from paper 2? No clue how they make CNN diagrams]
+-->
 
+Because the architecture presented in the paper treats only 32x32x3 images while our dataset and input consisted of larger images, we developed our own routines to divide our input image into separate 32x32x3 images. During prediction time, a voting scheme is used from the prediction output from each 32x32x3 subpatch to make the final decision. This makes our architecture adaptable to various image sizes and have experimentally be shown to further increase prediction accuracy.
 
 One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training, testing, and validation set.
 
-<!---
-TODO: Add missing image
--->
-
-Because the architecture presented in the paper treats only 32x32x3 images while our dataset and input consisted of larger images, we developed our own routines to divide our input image into separate 32x32x3 images. During prediction time, a voting scheme is used from the prediction output from each 32x32x3 subpatch to make the final decision. This makes our architecture adaptable to various image sizes
 
 ### Filter Inversion
 
 
 ### End to End Neural Network
+From the resul
 
 ## Experiments/Results
 
@@ -129,7 +128,7 @@ Because the architecture presented in the paper treats only 32x32x3 images while
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODkyNzYzODUsLTE3OTkxMTc2ODUsLT
+eyJoaXN0b3J5IjpbLTEyNDI4MTkxNTMsLTE3OTkxMTc2ODUsLT
 k2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4
 MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLD
 Y3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIy
