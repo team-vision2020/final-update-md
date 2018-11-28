@@ -31,7 +31,8 @@ In many of these settings such as image denoising or brightening, the modificati
 The problem of filter identification actually mirrors closely that of identification of camera source from images. The idea behind these methods is to exploit noise profiles inherent in cameras to identify the camera source based on a given image. There have been several pieces of literature that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source[^lucas] but have failed to achieve notable high accuracy. However, there are several recent works that applied convolutional neural networks to achieve notable results [see references below] 
 
 based on camera noise and there are several piece of literature regarding this topic. While there have been several paper on this topic previously using traditional expert feature based techniques [need references], we particularly follow convolutional neural network based approaches that have shown good results in the past two years, specifically
-([Lukas et al., 2006] Lukas, J., Fridrich, J., and Goljan, M. (2006). Digital camera identification from sensor pattern noise. IEEE Transactions on Information Forensics and Security, 1(2):205–214) 
+
+[^lucas]([Lukas et al., 2006] Lukas, J., Fridrich, J., and Goljan, M. (2006). Digital camera identification from sensor pattern noise. IEEE Transactions on Information Forensics and Security, 1(2):205–214) 
 ##### Deep learning for source camera identification on mobile devices
 https://arxiv.org/abs/1710.01257
 
@@ -56,7 +57,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI5ODU2MjEzLDUwMDc5ODkxMywtMTY2MT
-U2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1
-LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVdfQ==
+eyJoaXN0b3J5IjpbLTE5MjkyMjAyNDEsNTAwNzk4OTEzLC0xNj
+YxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMx
+MzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYwNV19
 -->
