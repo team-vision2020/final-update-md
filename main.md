@@ -25,7 +25,7 @@ TODO: Add missing image
 
 Filtered photos have become ubiquitous on social media platforms such as Snapchat, Instagram, Flickr, and more. To the casual viewer, filters can make it hard to detect, their intentional subtlety making it hard to distinguish between filtered and unfiltered images on social media. This can lead to distorted perceptions of natural images, skewing expectations about natural appearances. We hope this project will help bring more transparency into how images are often edited by identifying whether a common image filter has been applied to an image, and expose users to the natural state of these images. We believe that transparency in the image editing process is important in raising awareness about deliberate modifications to perceptions of reality, and hope to allow viewers to consume edited content while being aware of their true nature.
 
-Not to be confused with filters in the computer vision setting, which are often used to better extract information from an image, filters in the social media setting describe a predefined set of modifications to an image that attempts enhance its human visual appeal. Most commonly, these filters come in the form of color balance adjustments and can be represented as tweaks to the color curves of an RGB image. A color curve $f: [0, 255] \to [0, 255]$ is a continuous function that remaps the intensities in each color channel. Modification to the color curve allows the user to non-uniformly boost or decrease color intensities at varying ranges to create various effects such as increasing contrast or creating color shifts (e.g. <!-- TODO: Add reference to the color curve figure. --> demonstrates a boost of blues in shadows while decreasing blues in highlights). Some filters also include additional effects such as blurring/sharpening using convolution kernels, the addition of borders, and the application of vignette darkening at the edges.
+Not to be confused with filters in the computer vision setting, generally used in image preprocessing, filters in the social media setting describe a predefined set of modifications to an image that attempts enhance its human visual appeal. Most commonly, these filters come in the form of color balance adjustments and can be represented as tweaks to the color curves of an RGB image. A color curve $f: [0, 255] \to [0, 255]$ is a continuous function that remaps the intensities in each color channel. Modification to the color curve allows the user to non-uniformly boost or decrease color intensities at varying ranges to create various effects such as increasing contrast or creating color shifts (e.g. <!-- TODO: Add reference to the color curve figure. --> demonstrates a boost of blues in shadows while decreasing blues in highlights). Some filters also include additional effects such as blurring/sharpening using convolution kernels, the addition of borders, and the application of vignette darkening at the edges.
 
 <!---
 TODO: Add missing image
@@ -171,11 +171,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjU3NjA3ODAsNzg1Njc1MjgyLDE2OT
-Q2MjcwNTcsLTE5NjA2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkw
-NjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3OD
-A4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMw
-NzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5Mj
-I5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MTU2NzY5
-Nl19
+eyJoaXN0b3J5IjpbLTMzMjI5OTIwNiw3ODU2NzUyODIsMTY5ND
+YyNzA1NywtMTk2MDY3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2
+NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MD
+g4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3
+MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMj
+k2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2
+XX0=
 -->
