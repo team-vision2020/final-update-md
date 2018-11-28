@@ -88,12 +88,9 @@ One problem we encountered was that because each image passes through 6 differen
 
 
 ## Experiments/Results
-We perform our experiments using 9000 $128\ \times\ 128$ images from 10 different categories from the MiniPlaces dataset[^Places] passed through 6 different filters [^TODO: filters] to create a total dataset of 63000 images (including the original images.) We split these images into 89.55% training 0.45% validation and 10\% testing sets with assurance that each image and its derivatives all belong to a single set. Therefore, our training set consists of 56420images while our testing set consisted of 12600 images.
+We perform our experiments using 9000 $128\ \times\ 128$ images from 10 different categories from the MiniPlaces dataset[^Places] passed through 6 different filters [^TODO: filters] to create a total dataset of 63000 images (including the original images.) We split these images into 89.55% training 0.45% validation and 10\% testing sets with assurance that each image and its derivatives all belong to a single set. Therefore, our training set consists of 56420 images, our validation set consisted of 280 images, and our testing set consisted of 6300 images.
 
-\begin{figure}[H]
-    \centering
-    \begin{align*}
-        \text{7200 images} \times \text{6 filters} + \text{7200 original images} &= \text{50400 training images}\\
+$\text{7200 images} \times \text{6 filters} + \text{7200 original images} &= \text{50400 training images}\\
         \text{1800 images} \times \text{6 filters} + \text{1800 original images} &= \text{12600 testing images}
     \end{align*}
     \caption{Detection dataset}
@@ -155,7 +152,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyODUwNTMzMSwtMTk2MDY3NDUsLTE3OT
+eyJoaXN0b3J5IjpbMTc3NTI1NjE4NSwtMTk2MDY3NDUsLTE3OT
 kxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5
 NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMD
 I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
