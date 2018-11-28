@@ -90,6 +90,10 @@ One problem we encountered was that because each image passes through 6 differen
 ### End to End Neural Network
 From the promising result obtained from the use of convolution neural network for filter inversion, we further adapted our CNN architecture to handle end to end filter inversion. This network would directly perform filter inversion on a given image without prior knowledge on the image filter. 
 
+We utilize Keras[^Keras] and heavily modified our network 
+
+ork that takes in $32 \times 32 \times 3$ images, pass them through two convolutional layers, one max pool layer, and two fully connected layer before passing it through a softmax layer to output a probability vector of which filter the model predicts the image have been passed through. We use categorical cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
+
 ## Experiments/Results
 
 ## Qualitative Results
@@ -128,11 +132,11 @@ From the promising result obtained from the use of convolution neural network fo
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwNzcxMzUzNSwtMTc5OTExNzY4NSwtOT
-Y4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgx
-MTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNj
-c4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIw
-MzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2Nj
-E1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEz
-NV19
+eyJoaXN0b3J5IjpbLTE5NjA2NzQ1LC0xNzk5MTE3Njg1LC05Nj
+gyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODEx
+MCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nz
+g0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAz
+MSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MT
+U2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1
+XX0=
 -->
