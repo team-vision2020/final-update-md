@@ -100,11 +100,11 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 ## Conclusion and Future Work
 ## References
 
-[^1] C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
+[^1]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzUyNTExMjQsMTUzMjgxOTkwLDE3ND
-E2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2
-LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4Nj
-I4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2
-MDVdfQ==
+eyJoaXN0b3J5IjpbMzY4MjU5OTk2LDE1MzI4MTk5MCwxNzQxNj
+A5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1
+MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyOD
+Y3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1
+XX0=
 -->
