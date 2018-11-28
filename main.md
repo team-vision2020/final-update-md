@@ -82,14 +82,7 @@ One problem we encountered was that because each image passes through 6 differen
 TODO: Add missing image
 -->
 
-Because the architecture presented in the paper treats only 32x32x3 images while our dataset and input consisted of larger images, we developed our own routines to divide our input image into separate 32x32x3 images. During prediction time, a voting scheme is used to based on the prediction output from each 32x32x3 subpatch 
-
-
-More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. The final output layer is a softmax layer and outputs a probability vector of filter applied to the image. Our current network's input size is only $32 \times 32 \times 3$ and are trained using images of these size. For images larger than the network input size of $32 \times 32 \times 3$, we subdivide the source image into separate patches and perform voting based on the classification for each subpatch.
-
-We implemented the neural network using the Keras[^Keras] API, and the TensorFlow backend.
-
-Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images, we subdivide each image into 16 disjoint subpatches of $32 \times 32 \times 3$ images and use them as training data.  
+Because the architecture presented in the paper treats only 32x32x3 images while our dataset and input consisted of larger images, we developed our own routines to divide our input image into separate 32x32x3 images. During prediction time, a voting scheme is used from the prediction output from each 32x32x3 subpatch to make the final decision. This makes our architecture adaptable to various image sizes
 
 ## Experiments/Results
 
@@ -128,7 +121,7 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MzE0Mzg1NjcsLTE3OTkxMTc2ODUsLT
+eyJoaXN0b3J5IjpbLTE1ODgyNzAxMzksLTE3OTkxMTc2ODUsLT
 k2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4
 MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLD
 Y3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIy
