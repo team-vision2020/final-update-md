@@ -28,8 +28,9 @@ Though our work relates to many other fields of computer vision, such as image d
 
 In many of these settings such as image denoising or brightening, the modifications applied to the image (noise, etc.) are either consistent across the dataset or is known a priori. Our task is different from these previous work as our filter functions are unknown, but we have examples of unfiltered \& filtered images. Therefore, we decompose this task of filter inversion into two separate tasks, one is filter identification given an input image and the other is filter inversion given a known filter. Filter identification for an image is a classification task while filter inversion is a regression task estimating the filter inverses.
 
-The problem of filter identification mirrors closely that of identification of the source camera of a given image. To identify the source camera, one needs to exploit the noise profiles inherent to a camera and identify that noise profile in the given image. There have been several pieces of literature, especially in the field of digital forensics, that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source[^lucas] but have failed to achieve high accuracy. However, there are several recent works that applied convolutional neural networks to achieve notable results[^obregon] [^huang] [^kuzin].
+The problem of filter identification mirrors closely that of identification of the source camera of a given image. To identify the source camera, one needs to exploit the noise profiles inherent to a camera and identify that noise profile in the given image. There have been several pieces of literature, especially in the field of digital forensics, that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source[^lucas] but have failed to achieve high accuracy. However, several several recent works have applied convolutional neural networks to the problem and achieved notable results[^obregon] [^huang] [^kuzin].
 
+We see these literature as
 We specifically take the approach from [^obregon] and apply this to the context of filter inversion. Instead of an unknown camera creating noise in an image taken, an unknown filter has been applied to an image.
 
 
@@ -56,7 +57,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2Nj
-E1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEz
-NSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1XX0=
+eyJoaXN0b3J5IjpbMTYyODI3MDk1LC05NjAxNDc0MTYsNTAwNz
+k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
+Nyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYwNV19
 -->
