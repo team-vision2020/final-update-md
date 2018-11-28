@@ -65,7 +65,7 @@ Note that this low level data can be augmented with scene and object information
 
 Due to the lack of neural network based approaches in the previous work done in this area, we had no intuition on the appropriate complexity required for our models. Therefore, we first experimented with the simplest models with one layer and few neurons, found it performed poorly, and gradually increased complexity until diminishing return on performance occurred.
 
-We utilize Keras[^keras] to create a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU activation function because it has been consistently shown to provide good performance and training speed for neural networks[^ReLU]. We use a cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
+We utilize Keras[^keras] to create a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU[^ReLU] activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU[^ReLU] activation function because it has been consistently shown to provide good performance and training speed for neural networks[^ReLU]. We use a cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
 
 One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training and testing set.
 
@@ -75,7 +75,8 @@ TODO: Add missing image
 
 More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. The final output layer is a softmax layer and outputs a probability vector of filter applied to the image. Our current network's input size is only $32 \times 32 \times 3$ and are trained using images of these size. For images larger than the network input size of $32 \times 32 \times 3$, we subdivide the source image into separate patches and perform voting based on the classification for each subpatch.
 
-We implemented the neural network using Keras api.
+We implemented the neural network using the Keras[^Keras] API, and the TensorFlow backend.
+
 Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images, we subdivide each image into 16 disjoint subpatches of $32 \times 32 \times 3$ images and use them as training data.  
 
 ## Experiments/Results
@@ -115,10 +116,10 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjkwNDk3MjI1LDEzMDI2MDgxMTAsNzgwOD
-g1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDcz
-LDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOT
-Y4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYs
-NDkzOTc3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEzNSwtMTk2Nz
-I2NTEyNiwxOTAzOTA5NjA1XX0=
+eyJoaXN0b3J5IjpbMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MD
+g4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3
+MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMj
+k2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2
+LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMxMzUsLTE5Nj
+cyNjUxMjYsMTkwMzkwOTYwNV19
 -->
