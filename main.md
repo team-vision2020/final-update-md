@@ -50,6 +50,10 @@ Our approach splits the end-to-end task of filter inversion into two steps:
 
 While there are infinitely many filters possible, popular social media platforms have a few pre-selected filters that are widely used. Therefore, we constrain the scope of our filter inversion by assuming input images were filtered at most once by a filter from a known set. To accurately model a real-world application, our list comprises of the following six popular Instagram filters:
 
+1. Clarendon
+2. Juno
+3. 
+
 <!---
 TODO: Add missing image
 -->
@@ -116,10 +120,10 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MD
-g4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3
-MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMj
-k2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2
-LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMxMzUsLTE5Nj
-cyNjUxMjYsMTkwMzkwOTYwNV19
+eyJoaXN0b3J5IjpbNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMj
+YwODExMCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMjAyOTc0MTU4
+MSw2Nzg0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5Mj
+UyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywt
+MTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMj
+IzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVdfQ==
 -->
