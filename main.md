@@ -16,10 +16,7 @@ Previously, the low accuracies of our simple filter identification model, with a
 Here, we follow a new approach in filter prediction using convolutional neural networks. It was able to achieve an average accuracy of 95% and a lowest F1 score across all categories improved to be 0.88.
 
 ## Teaser Figure
-
-<!---
-TODO: Add missing image
--->
+[]()
 
 ## Introduction
 
@@ -182,11 +179,11 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMDQzMDg0MjcsLTI5MTY3Njc3NywxOD
-kwMDk1NzQzLC0xODY0NTUwNjU4LDIwNTg3NjE2OTYsLTQzMDY0
-NTI1MiwtMjA1MjYwODQyLC0yNTkwMDc1NzMsMTc5MjI4MTE1LD
-ExNDM1NzQ1OSwtMzMyMjk5MjA2LDc4NTY3NTI4MiwxNjk0NjI3
-MDU3LC0xOTYwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LD
-UwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1
-NTAzXX0=
+eyJoaXN0b3J5IjpbLTI1MTk5OTg5NiwtMTAwNDMwODQyNywtMj
+kxNjc2Nzc3LDE4OTAwOTU3NDMsLTE4NjQ1NTA2NTgsMjA1ODc2
+MTY5NiwtNDMwNjQ1MjUyLC0yMDUyNjA4NDIsLTI1OTAwNzU3My
+wxNzkyMjgxMTUsMTE0MzU3NDU5LC0zMzIyOTkyMDYsNzg1Njc1
+MjgyLDE2OTQ2MjcwNTcsLTE5NjA2NzQ1LC0xNzk5MTE3Njg1LC
+05NjgyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2OTcsMTMwMjYw
+ODExMF19
 -->
