@@ -95,32 +95,29 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 [^lucas]:([Lukas et al., 2006] Lukas, J., Fridrich, J., and Goljan, M. (2006). ''Digital camera identification from sensor pattern noise. IEEE Transactions on Information Forensics and Security'', 1(2):205–214) 
 
-[^obregon]:Deep learning for source camera identification on mobile devices https://arxiv.org/abs/1710.01257
+[^obregon]: Deep learning for source camera identification on mobile devices https://arxiv.org/abs/1710.01257
 
 [^huang]:  Identification of the source camera of images based on convolutional neural network https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
 
 [^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
-[^Instafilters]: M. Pratusevich, "Instagram Filters in 15 Lines of Python", Practice Python, 2016. \textit{Retrieved from URL, https://www.practicepython.org/blog/2016/12/20/instagram-filters-python.html}.
+[^Instafilters]: M. Pratusevich, "Instagram Filters in 15 Lines of Python", Practice Python, 2016. _Retrieved from [URL](https://www.practicepython.org/blog/2016/12/20/instagram-filters-python.html)_.
 
-[^Instafilters_tutorial]: GraphixTV, "Instagram Filter Effects Tutorials", YouTube, 2017. _Retrieved from URL,
-https://www.youtube.com/playlist?list=PLESCEzav4FyfUIi0RHMkNbQI-9JVr4kJc_
+[^Instafilters_tutorial]: GraphixTV, "Instagram Filter Effects Tutorials", YouTube, 2017. _Retrieved from [URL](https://www.youtube.com/playlist?list=PLESCEzav4FyfUIi0RHMkNbQI-9JVr4kJc)_
 
-\bibitem{MaskRCNN}
-H. Kaiming, G. Gkioxari, P. Doll{\'{a}}r and R. B. Girshick, ``Mask R-CNN'', Facebook AI Research, 2018.
+[^MaskRCNN]: H. Kaiming, G. Gkioxari, P. Dollar and R. B. Girshick, "Mask R-CNN", Facebook AI Research, 2018.
 
-\bibitem{Places} B. Zhou, A. Lapedriza, A. Khosla, A. Oliva, and A. Torralba ``Places: A 10 million Image Database for Scene Recognition'', IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017.
+[^Places]: B. Zhou, A. Lapedriza, A. Khosla, A. Oliva, and A. Torralba, "Places: A 10 million Image Database for Scene Recognition", IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017.
 
-\bibitem{Dark}
-C. Chen, C. Chen, J. Xu, and V. Koltun, ``Learning to See in the Dark'', CVPR, 2018.
+[^Dark]: C. Chen, C. Chen, J. Xu, and V. Koltun, "Learning to See in the Dark", CVPR, 2018.
 
-\bibitem{ReLU}
-R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, ``Understanding Locally Competitive Networks'', ICLR, 2015.
+[^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxODkxMDk0NCwtMjExNzc0Njk4NSwyMD
-I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
-MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNz
-k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
-Nyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYwNV19
+eyJoaXN0b3J5IjpbLTE0NDgxOTkxNzEsLTIxMTc3NDY5ODUsMj
+AyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkw
+NjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMD
+c5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1
+MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVdfQ
+==
 -->
