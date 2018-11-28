@@ -105,13 +105,12 @@ We adopted the approach in [^obregon] and found that slight tweaks in its hyperp
 We trained in rounds of 5 epochs with various batch sizes until validation accuracy started to decrease due to overfitting. Our model is trained with a total of 3 rounds of 5 epochs with batch sizes of 256, 1024, and 4096.
 
 
-
+<!--
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
 
 Given the simplicity of features we extract, we expected a simple model to provide comparative performance in the filter identification task. However, after experimentation, adding multiple layers to our model increased our model accuracy by upwards of 8\%. It is possible that applying a filter might affect an image's color histogram in more complex ways than we assumed and increasing the number of layers enabled the network to better understand the effect of filter application on an image's color histogram.
 
 Our final neural network contains four size 32 layers, one size 16 layer, two size 8 layers, and an output softmax layer with 7 nodes, in that order. The network is fully connected and every layer except the last uses \textit{ReLU} activation. The softmax layer produces a probability vector for the predicted filter. An input feature vector for this model contains $255 \times 3 = 765$ features. The main hyperparameter for future experimentation is the number of bins used here, or in general, what we choose to feed into our network. When stepping through increasing bin count, we found performance plateaued at 255 bins.
-
 We trained our neural network classifier for a total of 100 epochs with a batch size of 128 using the Adam optimizer \cite{Adam} and the cross-entropy loss function.
 
 One improvement to note is that we did not utilize validation set (which we should have) during our training process so we do not have an exact measure of overfitting. However, we evaluated our model performance different number of epochs and there were no noticeable increase accuracy from stopping before or going past 100 epochs.
@@ -121,7 +120,8 @@ One improvement to note is that we did not utilize validation set (which we shou
     \includegraphics[width=0.6\textwidth]{images/confusionMatrix.jpg}
     \caption{Confusion matrix for detection NN}
     \label{fig:confusion_matrix}
-\end{figure}
+\end{figure} -->
+
 
 Our initial approach evaluated our model based on the overall accuracy in the prediction (filter with maximum probability from our probability vector). However, we noticed visually subtler filters naturally had lower identification rates, so we refined our statistics to distinguish success for different filters. We thus also looked at the precision, recall, F1 score, and the confusion matrix to evaluate model performance on individual filters. For comparison, the baseline accuracy of a random classifier is 0.143.
 
@@ -161,11 +161,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0NjMxMDYyMCwxNjk0NjI3MDU3LC0xOT
-YwNjc0NSwtMTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1Mjkw
-NywyMDAzMjQxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMT
-E3NzQ2OTg1LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5
-MCwxNzQxNjA5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MD
-E0NzQxNiw1MDA3OTg5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4
-XX0=
+eyJoaXN0b3J5IjpbLTEwNTY3MDE2NjUsMTY5NDYyNzA1NywtMT
+k2MDY3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5
+MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMj
+ExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5
+OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05Nj
+AxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3Nzgy
+OF19
 -->
