@@ -139,7 +139,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 
 ## Conclusion and Future Work
 
-We initially considered using a structured approach that used nearest neighbors in a large corpus of knowledge about color distributions of scenes and detected objects, but decided to drop this alternative as the neural nets quickly pulled ahead in performance. Adding scene information did improve, however, meaning the network did gain knowledge of color distributions for different scenes. Initial plans were to construct a voting system from   
+We initially considered using a structured approach that used nearest neighbors in a large corpus of knowledge about color distributions of scenes and detected objects, but decided to drop this alternative as the neural nets quickly pulled ahead in performance. Adding scene information did improve, however, meaning the network did gain knowledge of color distributions for different scenes. Initial plans were to construct a voting system from detected object masks, but due to the intractability of MaskRCNN with such a large dataset and our limited resources we instead used voting from a systematic grid.  
 
 ## References
 
@@ -171,11 +171,11 @@ We initially considered using a structured approach that used nearest neighbors 
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5MjI4MTE1LDExNDM1NzQ1OSwtMzMyMj
-k5MjA2LDc4NTY3NTI4MiwxNjk0NjI3MDU3LC0xOTYwNjc0NSwt
-MTc5OTExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMj
-QxNjk3LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1
-LDIwMjk3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNj
-A5MDYyLC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNl19
+eyJoaXN0b3J5IjpbMTkyNDAwNTI3NSwxNzkyMjgxMTUsMTE0Mz
+U3NDU5LC0zMzIyOTkyMDYsNzg1Njc1MjgyLDE2OTQ2MjcwNTcs
+LTE5NjA2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyND
+UyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMs
+LTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMj
+gxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1N119
 
 -->
