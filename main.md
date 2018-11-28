@@ -77,12 +77,10 @@ One problem we encountered was that because each image passes through 6 differen
     \label{fig:detection_nn}
 \end{figure}
 
-
-
-More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. The final output layer is a softmax layer and outputs a probability vector of filter applied to the image. Our current network's input size is only 32x32x3 and are trained using images of these size. For images larger than the network input size of 32x32x3, we subdivide the source image into separate patches and perform voting based on the classification for each subpatch.
+More specifically, we follow the approach stated in the first paper which detailed 2 convolutional layers followed by two fully connected layers into the output layer. The final output layer is a softmax layer and outputs a probability vector of filter applied to the image. Our current network's input size is only $32 \times 32 \times 3$ and are trained using images of these size. For images larger than the network input size of $32 \times 32 \times 3$, we subdivide the source image into separate patches and perform voting based on the classification for each subpatch.
 
 We implemented the neural network using Keras api.
-Since the miniplaces dataset used contains only 128x128x3 images, we subdivide each image into 16 disjoint subpatches of 32x32x3 images and use them as training data.  
+Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images, we subdivide each image into 16 disjoint subpatches of $32 \times 32 \times 3$ images and use them as training data.  
 
 ## Experiments/Results
 
@@ -101,7 +99,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 [^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NjMwOTk5NTgsMTUzMjgxOTkwLDE3ND
+eyJoaXN0b3J5IjpbLTE5MTE3NjEzNzAsMTUzMjgxOTkwLDE3ND
 E2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2
 LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4Nj
 I4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2
