@@ -28,7 +28,7 @@ Though our work relates to many other fields of computer vision, such as image d
 
 In many of these settings such as image denoising or brightening, the modifications applied to the image (noise, etc.) are either consistent across the dataset or is known a priori. Our task is different from these previous work as our filter functions are unknown, but we have examples of unfiltered \& filtered images. Therefore, we decompose this task of filter inversion into two separate tasks, one is filter identification given an input image and the other is filter inversion given a known filter. Filter identification for an image is a classification task while filter inversion is a regression task estimating the filter inverses.
 
-The problem of filter identification actually mirrors closely that of identification of camera source from images. The idea behind these methods is to exploit noise profiles inherent in cameras to identify the camera source based on a given image. There have been several pieces of literature that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source ([Lukas et al., 2006] Lukas, J., Fridrich, J., and Goljan, M. (2006). Digital camera identification from sensor pattern noise. IEEE Transactions on Information Forensics and Security, 1(2):205–214) but 
+The problem of filter identification actually mirrors closely that of identification of camera source from images. The idea behind these methods is to exploit noise profiles inherent in cameras to identify the camera source based on a given image. There have been several pieces of literature that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source ([Lukas et al., 2006] Lukas, J., Fridrich, J., and Goljan, M. (2006). Digital camera identification from sensor pattern noise. IEEE Transactions on Information Forensics and Security, 1(2):205–214) but have failed to achieve notable high accuracy. However, there are several recent works that applied convolutional neural networks to achieve notable results [see references below] 
 
 based on camera noise and there are several piece of literature regarding this topic. While there have been several paper on this topic previously using traditional expert feature based techniques [need references], we particularly follow convolutional neural network based approaches that have shown good results in the past two years, specifically
 
@@ -56,7 +56,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5OTg3MDkxNywtMTY2MTU2NzY5Niw0OT
-M5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1
-MTI2LDE5MDM5MDk2MDVdfQ==
+eyJoaXN0b3J5IjpbNTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mz
+k3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMxMzUsLTE5NjcyNjUx
+MjYsMTkwMzkwOTYwNV19
 -->
