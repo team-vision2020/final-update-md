@@ -88,7 +88,7 @@ One problem we encountered was that because each image passes through 6 differen
 
 
 ## Experiments/Results
-We perform our experiments using 9000 $128\ \times\ 128$ images from 10 different categories from the MiniPlaces dataset[^Places] passed through 6 different filters [^TODO: filters] to create a total dataset of 63000 images (including the original images.) We split these images into 89.55% training and 10\% testing sets with assurance that images from the testing set and their filtered derivatives are not in the training set. Therefore, our training set consists of 50400 images while our testing set consisted of 12600 images.
+We perform our experiments using 9000 $128\ \times\ 128$ images from 10 different categories from the MiniPlaces dataset[^Places] passed through 6 different filters [^TODO: filters] to create a total dataset of 63000 images (including the original images.) We split these images into 89.55% training 0.45% validation and 10\% testing sets with assurance that each image and its derivatives all belong to a single set. Therefore, our training set consists of 56420images while our testing set consisted of 12600 images.
 
 \begin{figure}[H]
     \centering
@@ -155,11 +155,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc5MzI5ODYxLC0xOTYwNjc0NSwtMTc5OT
-ExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3
-LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMj
-k3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYy
-LC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OT
-g5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3
-XX0=
+eyJoaXN0b3J5IjpbMjEyODUwNTMzMSwtMTk2MDY3NDUsLTE3OT
+kxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5
+NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMD
+I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
+MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNz
+k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
+N119
 -->
