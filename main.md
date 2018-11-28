@@ -139,6 +139,8 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 
 ## Conclusion and Future Work
 
+Though we considered 
+
 ## References
 
 [^ieee_inversion]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
@@ -161,8 +163,6 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 
 [^Instafilters_tutorial]: GraphixTV, "Instagram Filter Effects Tutorials", YouTube, 2017. _Retrieved from [URL](https://www.youtube.com/playlist?list=PLESCEzav4FyfUIi0RHMkNbQI-9JVr4kJc)_
 
-[^MaskRCNN]: H. Kaiming, G. Gkioxari, P. Dollar and R. B. Girshick, "Mask R-CNN", Facebook AI Research, 2018.
-
 [^Places]: B. Zhou, A. Lapedriza, A. Khosla, A. Oliva, and A. Torralba, "Places: A 10 million Image Database for Scene Recognition", IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017.
 
 [^Dark]: C. Chen, C. Chen, J. Xu, and V. Koltun, "Learning to See in the Dark", CVPR, 2018.
@@ -171,11 +171,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzMjI5OTIwNiw3ODU2NzUyODIsMTY5ND
-YyNzA1NywtMTk2MDY3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2
-NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MD
-g4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3
-MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMxLDkyMj
-k2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNjYxNTY3Njk2
-XX0=
+eyJoaXN0b3J5IjpbLTkwOTA4MTgzMiwtMzMyMjk5MjA2LDc4NT
+Y3NTI4MiwxNjk0NjI3MDU3LC0xOTYwNjc0NSwtMTc5OTExNzY4
+NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMD
+I2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1
+ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OT
+I1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTNd
+fQ==
 -->
