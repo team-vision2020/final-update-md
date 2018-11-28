@@ -9,8 +9,8 @@ We propose an end-to-end system that will take an image from the user, identify 
 From our previous experiments, we were able to improve our results on classify images by the filter applied to it (from our predefined set of six Instagram filters) while distinguishing it from natural (unfiltered) images with an accuracy of 60% to 98% depending on the characteristics of the filter such as the amount of deviation from the original image.
 Let $E(I, I')$ be the average per-pixel mean of the sum absolute differences in intensity across all color channels of images $I$ and $I'$ (\textit{Equation 1}). For inverting images given a known filter, we were previously able to obtain a pseudo-inverse of the image with an average error $E$ of 1\% and our end-to-end system detected and inverted filters with an average error $E$ of 5.5\% between our output image and the original unfiltered version. In comparison, the baseline error $E$ between filtered and unfiltered images was found to be 8.4\%.
 
-The low accuracies of our simple filter identification model previously presented a bottleneck for the overall quality of our filter inverses. 
-We have improved our results in filter prediction using a convolutional neural network from an average of 78% previously to an average of 95% accuracy. Our lowest F1 score across all categories improved from 0.61 to 0.88.
+Previously, the low accuracies of our simple filter identification model, with an average accuracy of 78% and a lowest F1 score across all filters of 0.61, presented a bottleneck for the overall quality of our filter inverses.
+Here, we follow a new approach our results in filter prediction using a convolutional neural network an average of 95% accuracy. Our lowest F1 score across all categories improved from 0.61 to 0.88.
 
 ## Teaser Figure
 ## Introduction
@@ -40,7 +40,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDg0Mzg2OTYsNDkzOTc3ODI4LC0xOD
-YyODY3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5
-NjA1XX0=
+eyJoaXN0b3J5IjpbMzEzMzkyNjIsNDkzOTc3ODI4LC0xODYyOD
+Y3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1
+XX0=
 -->
