@@ -85,8 +85,6 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 ## Conclusion and Future Work
 
-## References
-
 [^ieee_inversion]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
 
 [^Keras]: F. Chollet and others, ''Keras'', GitHub, 2015.
@@ -114,7 +112,7 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjczMzI4MzAzLC0yMTE3NzQ2OTg1LDIwMj
+eyJoaXN0b3J5IjpbNjY1OTIyNzEzLC0yMTE3NzQ2OTg1LDIwMj
 k3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYy
 LC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OT
 g5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3
