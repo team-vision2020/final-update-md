@@ -70,12 +70,6 @@ As convolutional neural network architecture was able to obtain good results in 
 
 Similar to in the paper, we compared the use of ReLU and leaky ReLU activation function in our network and found that leaky ReLU provided vastly superior results. We further determined the non-activation slope of leaky ReLU experimentally to be 0.3
 
-For feature extraction, because color curves are a major component of many of the popular image filters, we decided to use color histograms to extract global color information from the image. Furthermore, because these color curve modifications are often applied independently in each RGB channel, we create separate color intensity histograms for each color channel and concatenate them together to generate the features for a given image.
-
-Note that this low level data can be augmented with scene and object information, premised on the idea that color distributions are correlated to the subjects and the environment of the image. This augmentation has not yet been incorporated into the pipeline.
-
-Due to the lack of neural network based approaches in the previous work done in this area, we had no intuition on the appropriate complexity required for our models. Therefore, we first experimented with the simplest models with one layer and few neurons, found it performed poorly, and gradually increased complexity until diminishing return on performance occurred.
-
 We utilize Keras[^keras] to create a sequential, feed-forward neural network with varying number of layers at different sizes with the ReLU[^ReLU] activation function on the hidden layers. The network ends with a softmax layer to obtain a probability vector. We use the ReLU[^ReLU] activation function because it has been consistently shown to provide good performance and training speed for neural networks[^ReLU]. We use a cross-entropy loss function and the Adam optimizer [^Adam] to train our neural network model.
 
 One problem we encountered was that because each image passes through 6 different filters and each of these images are in our dataset, we have to ensure that our model has not seen the images before to avoid memorizing previous image color distributions to obtain good results in the testing set. Therefore, we utilize a completely different set of base images for the training and testing set.
@@ -127,11 +121,11 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyMjgzNTI3Nyw1MDI0NTI5MDcsMjAwMz
-I0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4
-NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MT
-YwOTA2MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYs
-NTAwNzk4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mj
-g2NzUzNyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYw
-NV19
+eyJoaXN0b3J5IjpbLTEyMzIzMjAzNzksNTAyNDUyOTA3LDIwMD
+MyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMTc3NDY5
+ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkwLDE3ND
+E2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2
+LDUwMDc5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4Nj
+I4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2
+MDVdfQ==
 -->
