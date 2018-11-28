@@ -123,15 +123,15 @@ Because the architecture presented in the paper treats only 32x32x3 images while
 
 [^Dark]: C. Chen, C. Chen, J. Xu, and V. Koltun, "Learning to See in the Dark", CVPR, 2018.
 
-[^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "  
+[^LeakyReLU]:Bing Xu and Naiyan Wang and Tianqi Chen and Mu Li, "  
 Empirical Evaluation of Rectified Activations in Convolutional Network", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5NjU5MzMzNCwtMTc5OTExNzY4NSwtOT
-Y4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3LDEzMDI2MDgx
-MTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMjk3NDE1ODEsNj
-c4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYyLC02OTI1MjIw
-MzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OTg5MTMsLTE2Nj
-E1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3LDgyMDIyMzEz
-NV19
+eyJoaXN0b3J5IjpbLTEyMjk3NTc3ODksLTE3OTkxMTc2ODUsLT
+k2ODIyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4
+MTEwLDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLD
+Y3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIy
+MDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNzk4OTEzLC0xNj
+YxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUzNyw4MjAyMjMx
+MzVdfQ==
 -->
