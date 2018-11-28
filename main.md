@@ -110,7 +110,10 @@ For final model evaluation, we evaluated the overall accuracy, precision, recall
 
 We also compared this approach to the results of our previous approach, where we extracted RGB color histograms as features to an image and passing that to a feed-forward neural network model for classification.
 
-Baseline
+Baseline accuracy with random decision: $0.143$
+Average accuracy from feature based neural network model:  $0.783$
+Average accuracy of our convolutional neural network model: $0.955$
+
 
 <!--
 While we experimented with greyscale color histogram at first for its simplicity, the important role of color in filter identification pushed us towards our current feature extraction method. And because filters often modify color curves within the RGB space, we decided to extract three separate color intensity histogram in the RGB channel and concatenate them together as our image feature. We use 255 bins per color channel, which were represented as floats in the range [0, 1]. No meaningful performance gain was observed when increasing the number of bins past 255. Our neural network hyperparameters were tuned through manual search by starting with a simple model and increasing model complexity until no apparent improvements was noticed. 
@@ -168,7 +171,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NDIwNjQ4LDE2OTQ2MjcwNTcsLTE5Nj
+eyJoaXN0b3J5IjpbNzg1Njc1MjgyLDE2OTQ2MjcwNTcsLTE5Nj
 A2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3
 LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMT
 c3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkw
