@@ -139,7 +139,7 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 
 ## Conclusion and Future Work
 
-We initially considered a systematic approach using nearest neighbors in a large corpus of knowledge about color distributions of scenes and detected objects, but decided to drop this alternative as the neural nets quickly pulled ahead in performance. Adding scene information did further improve performance, however, meaning that as suspected the network did gain knowledge of color distributions for different scenes. Initial plans were to construct a voting system over detected object masks, thereby exploiting color distributions of common objects. Due to the intractability of MaskRCNN with such a large dataset given our limited resources,  we instead used voting over fixed size patches in our image. Similar to how scene information could be incorporated easily into the neural network approach, future work could force attention on objects in the scene by 
+We initially considered a systematic approach using nearest neighbors in a large corpus of knowledge about color distributions of scenes and detected objects, but decided to drop this alternative as the neural nets quickly pulled ahead in performance. Adding scene information did further improve performance, however, meaning that as suspected the network did gain knowledge of color distributions for different scenes. Initial plans were to construct a voting system over detected object masks, thereby exploiting color distributions of common objects. Due to the intractability of MaskRCNN with such a large dataset given our limited resources,  we instead used voting over fixed size patches in our image. Similar to how scene information was easily incorporated into the neural network approach, future work could force attention on objects in the scene by adding variable length feature on detected objects.
 
 ## References
 
@@ -171,11 +171,11 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1OTAwNzU3MywxNzkyMjgxMTUsMTE0Mz
-U3NDU5LC0zMzIyOTkyMDYsNzg1Njc1MjgyLDE2OTQ2MjcwNTcs
-LTE5NjA2NzQ1LC0xNzk5MTE3Njg1LC05NjgyMjkwNjQsNTAyND
-UyOTA3LDIwMDMyNDE2OTcsMTMwMjYwODExMCw3ODA4ODU1MDMs
-LTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMj
-gxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAzMSw5MjI5Njg1N119
-
+eyJoaXN0b3J5IjpbLTIwNTI2MDg0MiwtMjU5MDA3NTczLDE3OT
+IyODExNSwxMTQzNTc0NTksLTMzMjI5OTIwNiw3ODU2NzUyODIs
+MTY5NDYyNzA1NywtMTk2MDY3NDUsLTE3OTkxMTc2ODUsLTk2OD
+IyOTA2NCw1MDI0NTI5MDcsMjAwMzI0MTY5NywxMzAyNjA4MTEw
+LDc4MDg4NTUwMywtMjExNzc0Njk4NSwyMDI5NzQxNTgxLDY3OD
+QxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2MiwtNjkyNTIyMDMx
+XX0=
 -->
