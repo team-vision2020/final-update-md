@@ -93,9 +93,9 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 [^Adam]: D. P. Kingma and J. Ba, "Adam: A Method for Stochastic Optimization", 3rd International Conference for Learning Representations, San Diego, 2015.
 
-[^lucas]: Lukas, J., Fridrich, J., and Goljan, M, ''Digital camera identification from sensor pattern noise.", IEEE Transactions on Information Forensics and Security, 2006.
+[^lucas]: J. Lukas,  J. Fridrich, and M. Goljan, ''Digital camera identification from sensor pattern noise.", IEEE Transactions on Information Forensics and Security, 2006.
 
-[^obregon]: Deep learning for source camera identification on mobile devices https://arxiv.org/abs/1710.01257
+[^obregon]: D. Freire-Obregon, F. Narducci, S. Barra, and M. Castrillon-Santana. Deep learning for source camera identification on mobile devices https://arxiv.org/abs/1710.01257
 
 [^huang]:  Identification of the source camera of images based on convolutional neural network https://www.sciencedirect.com/science/article/pii/S1742287618302664#bib18
 
@@ -114,10 +114,9 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 [^ReLU]: R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, "Understanding Locally Competitive Networks", ICLR, 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzMxNjI2MDIsLTIxMTc3NDY5ODUsMj
-AyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkw
-NjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMD
-c5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1
-MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVdfQ
-==
+eyJoaXN0b3J5IjpbLTM2NDI0MjAyOCwtMjExNzc0Njk4NSwyMD
+I5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTAsMTc0MTYwOTA2
+MiwtNjkyNTIyMDMxLDkyMjk2ODU3LC05NjAxNDc0MTYsNTAwNz
+k4OTEzLC0xNjYxNTY3Njk2LDQ5Mzk3NzgyOCwtMTg2Mjg2NzUz
+Nyw4MjAyMjMxMzUsLTE5NjcyNjUxMjYsMTkwMzkwOTYwNV19
 -->
