@@ -39,7 +39,7 @@ Though our work relates to many other fields of computer vision, such as image d
 
 In many of these settings such as image denoising or brightening, the modifications applied to the image (noise, etc.) are either consistent across the dataset or is known a priori. Our task is different from these previous work as our filter functions are unknown, but we have examples of unfiltered \& filtered images. Therefore, we decompose this task of filter inversion into two separate tasks, one is filter identification given an input image and the other is filter inversion given a known filter. Filter identification for an image is a classification task while filter inversion is a regression task estimating the filter inverses.
 
-The problem of filter identification mirrors closely that of identification of the source camera of a given image. To identify the source camera, one needs to exploit the noise profiles inherent to a camera and identify that noise profile in the given image. There have been several pieces of literature, especially in the field of digital forensics, that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source[^lucas] but have failed to achieve high accuracy. However, several several recent works have applied convolutional neural networks to the problem and achieved notable results[^obregon] [^huang] [^kuzin]. Because the problem space between source camera identification and filter identification is similar, we take the approach of these recent papers and apply it to the context of filter inversion.
+The problem of filter identification mirrors closely that of identification of the source camera of a given image. To identify the source camera, one needs to exploit the noise profiles inherent to a camera and identify that noise profile in the given image, similar to the 'noise' within a filtered image. There have been several pieces of literature, especially in the field of digital forensics, that attempts to model sensor noise patterns explicitly and build correlations between noise patterns and camera source[^lucas] but have failed to achieve high accuracy. However, several several recent works have applied convolutional neural networks to the problem and achieved notable results[^obregon] [^huang] [^kuzin]. Because the problem space between source camera identification and filter identification is similar, we take the approach of these recent papers and apply it to the context of filter inversion.
 
 ## Approach
 
@@ -56,7 +56,6 @@ While there are infinitely many filters possible, popular social media platforms
 4. Lark
 5. Gotham
 6. Reyes
-7. 
 <!---
 TODO: Add missing image
 -->
@@ -102,7 +101,7 @@ For filter identification, because each image in the dataset is $128 \times 128 
 
 We adopted the approach in [^obregon] and found that slight tweaks in its hyperparameters was sufficient to provide strong results. We test greater modifications to the architecture such as adding additional convolution layers and tweaking number of neurons in the fully connected layers but found decreasing model complexity generally decrease accuracy and increasing complexity did not lead to meaningful increase in accuracy. One specific thing we did tune was  the negative slope coefficient on the leaky ReLU. We found a sweet spot of 0.3 to that allowed both fast convergence and robustness to the variation of hyperparameters.
 
-We trained in rounds of 5 epochs with various batch sizes until validation accuracy started to decrease due to overfitting. Our model is trained with a total of 3 rounds of 5 epochs with batch sizes of 256, 1024, and 4096.
+We trained in rounds of 5 epochs with various batch sizes until validation accuracy started to decrease due to overfitting. Our model is trained with a total of 3 rounds of 5 epochs with batch sizes of 256, 1024, and 4096 on a Nvidia GTx 
 
 We evaluated our model during training using overall accuracy on the validation set for each individual $32 \times 32 \times 3$  image. 
 
@@ -171,11 +170,11 @@ We initially considered a systematic approach using nearest neighbors in a large
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMDY0NTI1MiwtMjA1MjYwODQyLC0yNT
-kwMDc1NzMsMTc5MjI4MTE1LDExNDM1NzQ1OSwtMzMyMjk5MjA2
-LDc4NTY3NTI4MiwxNjk0NjI3MDU3LC0xOTYwNjc0NSwtMTc5OT
-ExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3
-LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMj
-k3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYy
-XX0=
+eyJoaXN0b3J5IjpbNTYzNTg5NDE0LC00MzA2NDUyNTIsLTIwNT
+I2MDg0MiwtMjU5MDA3NTczLDE3OTIyODExNSwxMTQzNTc0NTks
+LTMzMjI5OTIwNiw3ODU2NzUyODIsMTY5NDYyNzA1NywtMTk2MD
+Y3NDUsLTE3OTkxMTc2ODUsLTk2ODIyOTA2NCw1MDI0NTI5MDcs
+MjAwMzI0MTY5NywxMzAyNjA4MTEwLDc4MDg4NTUwMywtMjExNz
+c0Njk4NSwyMDI5NzQxNTgxLDY3ODQxMzA3MywxNTMyODE5OTBd
+fQ==
 -->
