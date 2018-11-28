@@ -7,8 +7,9 @@ Given the prevalence of photo editing and filtering on popular social media plat
 We propose an end-to-end system that will take an image from the user, identify probabilities for which common image filters were applied to the image, and apply the most likely filter inverse. We present both the filter probabilities and the inverted image to the user. We utilize features in the form of color histograms and scene details to extract a sense of natural color distributions and use neural networks both to determine the probabilities for applied filters and to invert an image given its most likely filter.
 
 From our previous experiments, we were able to improve our results on classify images by the filter applied to it (from our predefined set of six Instagram filters) while distinguishing it from natural (unfiltered) images with an accuracy of 60% to 98% depending on the characteristics of the filter such as the amount of deviation from the original image.
-Let $E(I, I')$ be the average per-pixel mean of the sum absolute differences in intensity across all color channels of images $I$ and $I'$ (\textit{Equation 1}). For inverting images given a known filter, we were previously able to obtain a pseudo-inverse of the image with an average error $E$ of 1\% and our end-to-end,em detects and inverts filters with an average error $E$ of 5.5\% between our output image and the original unfiltered version. In comparison, the baseline error $E$ between filtered and unfiltered images was found to be 8.4\%.
+Let $E(I, I')$ be the average per-pixel mean of the sum absolute differences in intensity across all color channels of images $I$ and $I'$ (\textit{Equation 1}). For inverting images given a known filter, we were previously able to obtain a pseudo-inverse of the image with an average error $E$ of 1\% and our end-to-end system detected and inverted filters with an average error $E$ of 5.5\% between our output image and the original unfiltered version. In comparison, the baseline error $E$ between filtered and unfiltered images was found to be 8.4\%.
 
+The low accuracies of our simple filter identification model previously presented a bottleneck for the overall quality of our filter inverses. 
 We have improved our results in filter prediction using a convolutional neural network from an average of 78% previously to an average of 95% accuracy. Our lowest F1 score across all categories improved from 0.61 to 0.88.
 
 ## Teaser Figure
@@ -39,7 +40,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTcxMDE2MSw0OTM5Nzc4MjgsLTE4Nj
-I4Njc1MzcsODIwMjIzMTM1LC0xOTY3MjY1MTI2LDE5MDM5MDk2
-MDVdfQ==
+eyJoaXN0b3J5IjpbLTE1MDg0Mzg2OTYsNDkzOTc3ODI4LC0xOD
+YyODY3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5
+NjA1XX0=
 -->
