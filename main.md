@@ -88,7 +88,7 @@ One problem we encountered was that because each image passes through 6 differen
 
 
 ## Experiments/Results
-We perform our experiments using 9000 $128\ \times\ 128$ images from 10 different categories from the MiniPlaces dataset[^Places] passed through 6 different filters [^TODO: filters] to create a total dataset of 63000 images (including the original images.) We split these images into 90\% training and 10\% testing sets with assurance that images from the testing set and their filtered derivatives are not in the training set. Therefore, our training set consists of 50400 images while our testing set consisted of 12600 images.
+We perform our experiments using 9000 $128\ \times\ 128$ images from 10 different categories from the MiniPlaces dataset[^Places] passed through 6 different filters [^TODO: filters] to create a total dataset of 63000 images (including the original images.) We split these images into 89.55% training and 10\% testing sets with assurance that images from the testing set and their filtered derivatives are not in the training set. Therefore, our training set consists of 50400 images while our testing set consisted of 12600 images.
 
 \begin{figure}[H]
     \centering
@@ -155,11 +155,11 @@ Our initial approach evaluated our model based on the overall accuracy in the pr
 Empirical Evaluation of Rectified Activations in Convolutional Network", [arXiv](https://arxiv.org/abs/1505.00853), 2015.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTAxODc2MjcsLTE5NjA2NzQ1LC0xNz
-k5MTE3Njg1LC05NjgyMjkwNjQsNTAyNDUyOTA3LDIwMDMyNDE2
-OTcsMTMwMjYwODExMCw3ODA4ODU1MDMsLTIxMTc3NDY5ODUsMj
-AyOTc0MTU4MSw2Nzg0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkw
-NjIsLTY5MjUyMjAzMSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMD
-c5ODkxMywtMTY2MTU2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1
-MzddfQ==
+eyJoaXN0b3J5IjpbNjc5MzI5ODYxLC0xOTYwNjc0NSwtMTc5OT
+ExNzY4NSwtOTY4MjI5MDY0LDUwMjQ1MjkwNywyMDAzMjQxNjk3
+LDEzMDI2MDgxMTAsNzgwODg1NTAzLC0yMTE3NzQ2OTg1LDIwMj
+k3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYy
+LC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OT
+g5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3
+XX0=
 -->
