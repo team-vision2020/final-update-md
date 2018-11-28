@@ -89,6 +89,8 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 [^ieee_inversion]: C. Chen and M. C. Stamm, “Image filter identification using demosaicing residual features,” 2017 IEEE International Conference on Image Processing (ICIP), Beijing, 2017, pp. 4103-4107.
 
+[^Keras]: F. Chollet and others, Keras'', GitHub, 2015.
+
 [^lucas]:([Lukas et al., 2006] Lukas, J., Fridrich, J., and Goljan, M. (2006). Digital camera identification from sensor pattern noise. IEEE Transactions on Information Forensics and Security, 1(2):205–214) 
 
 [^obregon]:Deep learning for source camera identification on mobile devices https://arxiv.org/abs/1710.01257
@@ -97,10 +99,32 @@ Since the miniplaces dataset used contains only $128 \times 128 \times 3$ images
 
 [^kuzin]:Camera Model Identification Using Convolutional Neural Networks https://arxiv.org/pdf/1810.02981.pdf
 
+
+\bibitem{Adam}
+D. P. Kingma and J. Ba, ``Adam: A Method for Stochastic Optimization'', 3rd International Conference for Learning Representations, San Diego, 2015.
+
+\bibitem{Instafilters}
+M. Pratusevich, ``Instagram Filters in 15 Lines of Python'', Practice Python, 2016. \textit{Retrieved from URL, https://www.practicepython.org/blog/2016/12/20/instagram-filters-python.html}.
+
+\bibitem{Instafilters_tutorial}
+GraphixTV, ``Instagram Filter Effects Tutorials'', YouTube, 2017. \textit{Retrieved from URL,
+https://www.youtube.com/playlist?list=PLESCEzav4FyfUIi0RHMkNbQI-9JVr4kJc}
+
+\bibitem{MaskRCNN}
+H. Kaiming, G. Gkioxari, P. Doll{\'{a}}r and R. B. Girshick, ``Mask R-CNN'', Facebook AI Research, 2018.
+
+\bibitem{Places} B. Zhou, A. Lapedriza, A. Khosla, A. Oliva, and A. Torralba ``Places: A 10 million Image Database for Scene Recognition'', IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017.
+
+\bibitem{Dark}
+C. Chen, C. Chen, J. Xu, and V. Koltun, ``Learning to See in the Dark'', CVPR, 2018.
+
+\bibitem{ReLU}
+R. K. Srivastava, J. Masci, F. Gomez and J. Schmidhuber, ``Understanding Locally Competitive Networks'', ICLR, 2015.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTc3NDY5ODUsMjAyOTc0MTU4MSw2Nz
-g0MTMwNzMsMTUzMjgxOTkwLDE3NDE2MDkwNjIsLTY5MjUyMjAz
-MSw5MjI5Njg1NywtOTYwMTQ3NDE2LDUwMDc5ODkxMywtMTY2MT
-U2NzY5Niw0OTM5Nzc4MjgsLTE4NjI4Njc1MzcsODIwMjIzMTM1
-LC0xOTY3MjY1MTI2LDE5MDM5MDk2MDVdfQ==
+eyJoaXN0b3J5IjpbOTMwNTA5OTQ2LC0yMTE3NzQ2OTg1LDIwMj
+k3NDE1ODEsNjc4NDEzMDczLDE1MzI4MTk5MCwxNzQxNjA5MDYy
+LC02OTI1MjIwMzEsOTIyOTY4NTcsLTk2MDE0NzQxNiw1MDA3OT
+g5MTMsLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xODYyODY3NTM3
+LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1XX0=
 -->
