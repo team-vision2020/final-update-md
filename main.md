@@ -28,7 +28,9 @@ Though our work relates to many other fields of computer vision, such as image d
 
 In many of these settings such as image denoising or brightening, the modifications applied to the image (noise, etc.) are either consistent across the dataset or is known a priori. Our task is different from these previous work as our filter functions are unknown, but we have examples of unfiltered \& filtered images. Therefore, we decompose this task of filter inversion into two separate tasks, one is filter identification given an input image and the other is filter inversion given a known filter. Filter identification for an image is a classification task while filter inversion is a regression task estimating the filter inverses.
 
-The problem of filter identification actually mirrors closely that of identification of camera source based on camera noise and there are several piece of literature regarding this topic. While there have been several paper on this topic previously using traditional expert feature based techniques [need references], we particularly follow convolutional neural network based approaches that have shown good results in the past two years, specifically
+The problem of filter identification actually mirrors closely that of identification of camera source from images. The idea behind these methods is to exploit noise profiles inherent in cameras to identify the camera source based on a given image. There are several pieces of literature on this topic  
+
+based on camera noise and there are several piece of literature regarding this topic. While there have been several paper on this topic previously using traditional expert feature based techniques [need references], we particularly follow convolutional neural network based approaches that have shown good results in the past two years, specifically
 
 ##### Deep learning for source camera identification on mobile devices
 https://arxiv.org/abs/1710.01257
@@ -54,7 +56,7 @@ Since the miniplaces dataset used contains only 128x128x3 images, we subdivide e
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2Mzc2MjMsNDkzOTc3ODI4LC0xODYyOD
-Y3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5NjA1
-XX0=
+eyJoaXN0b3J5IjpbLTE2NjE1Njc2OTYsNDkzOTc3ODI4LC0xOD
+YyODY3NTM3LDgyMDIyMzEzNSwtMTk2NzI2NTEyNiwxOTAzOTA5
+NjA1XX0=
 -->
